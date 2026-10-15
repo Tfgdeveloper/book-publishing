@@ -22,8 +22,9 @@ function App() {
           {/* Every page inside Layout gets the Navbar + Footer */}
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
-            {/* Every page inside Layout gets the Navbar + Footer 
+            
             <Route path="/about" element={<About />} />
+            {/* Every page inside Layout gets the Navbar + Footer 
             <Route path="/services" element={<Service />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="/portfolio" element={<Portfolio />} />

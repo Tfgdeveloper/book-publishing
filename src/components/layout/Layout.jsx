@@ -2,15 +2,15 @@
 
 import { Outlet } from "react-router";
 import ScrollToTop from "./ScrollToTop";
-import Navbar from "../sections/Navbar";
-import Footer from "../sections/Footer";
-import { ServicesMenu } from "../sections/ServicesMegaMenu";
+import Navbar from "../Sharedsections/Navbar";
+import Footer from "../Sharedsections/Footer";
+import { ServicesMenu } from "../Sharedsections/ServicesMegaMenu";
 
 
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "#about" },
-  { label: "Services", href: "#services",  },
+  { label: "Services", href: "#services", },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Reviews", href: "#reviews" },
   { label: "Contact", href: "#contact" },

@@ -10,7 +10,7 @@ const SecondaryButton = ({
   disabled = false,
 }) => {
   const buttonVariants = {
-    default: "glass text-white",
+    default: "glass text-white rounded-full",
     glassIcon: "bg-transparent border-transparent shadow-none text-white",
     gradientIcon: "bg-transparent border-transparent shadow-none text-black",
   };

@@ -3,6 +3,7 @@ import { Phone } from "lucide-react";
 import Container from "../ui/Container";
 import PrimaryButton from "../ui/PrimaryButton";
 import SecondaryButton from "../ui/SecondaryButton";
+import Heading from "../ui/Heading";
 
 const GRADIENT = "linear-gradient(135deg, #E2770B 0%, #EF1A07 35%, #EF1A07 100%)";
 const PHONE = "(000) 123 4567";
@@ -68,9 +69,9 @@ function BookWriting({
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.h2 variants={item} className="font-heading text-3xl leading-tight text-[#000] md:text-4xl lg:text-5xl">
-            <span className="">Book Writing,</span>
-            <span className="light"> Where</span>
-            <span className="block font-light">your Story comes to Life</span>
+            <span className="medium">Book Writing,</span>
+            <span className="regular"> Where your Story comes to Life</span>
+            
           </motion.h2>
 
           <motion.p variants={item} className="mt-5 text-sm leading-7 text-[#555] md:text-base">

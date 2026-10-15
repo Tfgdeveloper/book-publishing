@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Container from "../ui/Container";
 import { Lightbulb } from "lucide-react";
+import Heading from "../ui/Heading";
 /* Replace icons with your own (transparent PNG or SVG) */
 const STEPS = [
   {
@@ -115,9 +116,9 @@ function ProcessSteps({ steps = STEPS }) {
           className="mx-auto max-w-2xl text-center"
         >
           <h2 className="font-heading text-3xl text-[#000] md:text-4xl lg:text-5xl">
-            <span className="font-light">From Idea to </span>
-            <span className="">Published Book</span>
-            <span className="font-light"> Step by Step</span>
+            <span className="regular">From Idea to </span>
+            <span className="medium">Published Book</span>
+            <span className="regular"> Step by Step</span>
           </h2>
           <p className="mt-4 text-sm font-light leading-6 text-[#555] md:text-base">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has

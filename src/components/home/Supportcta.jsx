@@ -4,6 +4,7 @@ import { ArrowUpRight, BookUser, Phone } from "lucide-react";
 import Container from "../ui/Container";
 import PrimaryButton from "../ui/PrimaryButton";
 import SecondaryButton from "../ui/SecondaryButton";
+import Heading from "../ui/Heading";
 
 /*
   One CTA component, three looks:
@@ -70,7 +71,7 @@ const SOCIALS = [
    Variant 1: SUPPORT (original)
 ================================================================ */
 function SupportVariant({
-  phone = "(406) 555-0120",
+  phone = "+123 - 234 - 1234",
   socials = SOCIALS,
   arrowHref = "#contact",
 }) {
@@ -124,8 +125,8 @@ function SupportVariant({
               <div className="relative flex h-full flex-col justify-center gap-5 px-8 py-10 pl-12 text-white lg:flex-row lg:items-center lg:justify-between lg:py-12 lg:pl-28 lg:pr-10">
                 <div>
                   <h2 className="font-heading text-2xl leading-tight md:text-3xl">
-                    <span className="font-light">Still You Need </span>
-                    <span className="font-semibold">Our Support?</span>
+                    <span className="font-regular">Still You Need </span>
+                    <span className="font-medium">Our Support?</span>
                   </h2>
                   <p className="mt-2 text-sm text-white/85">
                     Don't wait, make a smart &amp; logical quote here. It's pretty easy.
@@ -134,7 +135,7 @@ function SupportVariant({
 
                 <a
                   href={telHref(phone)}
-                  className="inline-flex shrink-0 items-center gap-2 self-start text-sm font-medium transition-opacity hover:opacity-80 lg:self-center lg:text-base"
+                  className="inline-flex shrink-0 items-center gap-2 self-start text-sm font-medium transition-opacity hover:opacity-80 lg:self-center lg:text-base mr-5"
                 >
                   <Phone className="h-4 w-4" fill="currentColor" strokeWidth={0} />
                   {phone}
@@ -184,8 +185,8 @@ function PublishVariant({
         <Container className="relative grid items-center gap-10 py-8 lg:grid-cols-[2fr_1fr] lg:py-13">
           <motion.div {...fadeUp} className="text-white">
             <h2 className="font-heading text-3xl leading-tight md:text-4xl">
-              <span className="">Publish Your Book </span>
-              <span className="light">Journey With Us</span>
+              <span className="medium">Publish Your Book </span>
+              <span className="regular">Journey With Us</span>
             </h2>
             <p className="mt-4  text-sm leading-6 text-white/85 font-light">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
@@ -269,9 +270,9 @@ function StatsVariant({ stats = STATS }) {
           <div className="relative grid items-center gap-10 lg:grid-cols-[1fr_2fr]">
             <div>
               <h2 className="font-heading text-3xl leading-tight md:text-4xl">
-                <span className="font-light">We are </span>
-                <span className="">growing</span>
-                <span className="block font-light">like crazy</span>
+                <span className="regular">We are </span>
+                <span className="medium">growing </span>
+                <span className="block regular">like crazy</span>
               </h2>
               <p className="mt-3 max-w-xs text-sm font-light leading-6 text-white/85">
                 Lorem ipsum dolor, consectetur elit. Praesent porta metus.

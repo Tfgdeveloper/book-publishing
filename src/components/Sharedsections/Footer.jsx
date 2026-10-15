@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 import PrimaryButton from "../ui/PrimaryButton";
+import Heading from "../ui/Heading";
 
 const GRADIENT = "linear-gradient(135deg, #E2770B 0%, #EF1A07 35%, #EF1A07 100%)";
 const GLOW = "0 10px 25px rgba(239,26,7,0.3), 0 4px 12px rgba(226,119,11,0.25)";
@@ -75,10 +76,10 @@ export default function Footer() {
         className="mx-auto flex max-w-6xl flex-col gap-6 border-b border-white/10 px-6 py-12 md:flex-row md:items-center md:justify-between lg:py-14"
       >
         <div>
-          <h2 className="font-heading text-3xl leading-tight md:text-4xl">
-            <span className="">Subscribe</span>
-            <span className="font-light"> to our list</span>
-          </h2>
+          <Heading className="font-heading text-3xl leading-tight md:text-4xl">
+            <span className="medium">Subscribe</span>
+            <span className="regular"> to our list</span>
+          </Heading>
           <p className="mt-3 text-sm font-light text-white/60">
             Don't wait, make a smart &amp; logical quote here. It's pretty easy.
           </p>

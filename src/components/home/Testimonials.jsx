@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star, ThumbsUp } from "lucide-react";
 import Container from "../ui/Container";
+import Heading from "../ui/Heading";
 
 const GRADIENT = "linear-gradient(135deg, #E2770B 0%, #EF1A07 35%, #EF1A07 100%)";
 const AUTOPLAY_MS = 5000; // time on each review; 0 turns autoplay off
@@ -155,9 +156,9 @@ function Testimonials({ reviews = REVIEWS }) {
           className="mx-auto max-w-2xl text-center"
         >
           <h2 className="font-heading text-3xl text-[#000] md:text-4xl lg:text-5xl">
-            <span className="font-light">Trusted by </span>
-            <span className="">Authors</span>
-            <span className="font-light"> Worldwide</span>
+            <span className="regular">Trusted by </span>
+            <span className="medium">Authors</span>
+            <span className="regular"> Worldwide</span>
           </h2>
           <p className="mt-4 text-sm leading-6 font-light text-[#555] md:text-base">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has

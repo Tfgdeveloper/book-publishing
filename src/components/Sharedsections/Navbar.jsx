@@ -55,7 +55,7 @@ const Navbar = ({
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease }}
-        className="relative z-40 w-full bg-transparent -mb-[90px] z-50 mx-auto max-w-[1600px] "
+        className="relative z-40 w-full bg-transparent -mb-[100px] z-50 mx-auto max-w-[1600px] "
       >
         <nav className="w-[85%] mx-auto glass rounded-full flex h-16 items-center justify-between px-5 sm:h-20 sm:px-6 lg:px-16 mt-3">
           <Link

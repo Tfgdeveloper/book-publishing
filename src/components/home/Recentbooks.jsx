@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Container from "../ui/Container";
+import Heading from "../ui/Heading";
 
 /* Replace with your covers (portrait images, about 2:3) */
 const BOOKS = [
@@ -67,9 +68,9 @@ function RecentBooks({ books = BOOKS }) {
           transition={{ duration: 0.8, ease }}
           className="mx-auto max-w-2xl text-center"
         >
-          <h2 className="font-heading text-3xl text-[#000] md:text-4xl lg:text-5xl">
-            <span className="font-light">Our Recent </span>
-            <span className="">Selling Books</span>
+          <h2  className="font-heading text-3xl text-[#000] md:text-4xl lg:text-5xl">
+            <span className="regular">Our Recent </span>
+            <span className="medium">Selling Books</span>
           </h2>
           <p className="mt-4 text-sm leading-6 text-light text-[#555] md:text-base">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has

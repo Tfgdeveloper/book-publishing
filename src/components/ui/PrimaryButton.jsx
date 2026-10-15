@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import Modal from "../sections/Modal";
+import Modal from "../Sharedsections/Modal";
 
 const PrimaryButton = ({
   children,

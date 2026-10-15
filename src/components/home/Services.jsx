@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Check, ArrowRight, Play } from "lucide-react";
 import Container from "../ui/Container";
 import PrimaryButton from "../ui/PrimaryButton";
+import Heading from "../ui/Heading";
 
 const GRADIENT = "linear-gradient(135deg, #E2770B 0%, #EF1A07 35%, #EF1A07 100%)";
 
@@ -157,10 +158,11 @@ function Services() {
         >
           <motion.h2
             variants={itemVariants}
-            className="font-heading text-4xl leading-tight text-[#000] md:text-5xl"
+            className="font-heading text-4xl leading-tight text-[#000] md:text-5xl regular"
+           
           >
-            <span className="block light">Your Complete</span>
-            <span className="block ">Publishing Solution</span>
+             <>Your Complete <span className="block medium">Publishing Solution</span></>
+           
           </motion.h2>
 
           <motion.p
