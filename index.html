@@ -9,5 +9,50 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+
+  // Seconds to wait after page load before auto-opening the chat
+  var TAWK_AUTO_OPEN_DELAY = 3000;
+
+  // 1. Auto-open the chat when the website loads
+  Tawk_API.onLoad = function () {
+    var isMobile = window.innerWidth < 768;
+    var alreadyOpened = false;
+    try { alreadyOpened = sessionStorage.getItem("tawk_auto_opened") === "1"; } catch (e) {}
+
+    // Skip on mobile (chat covers the full screen there) and only once per visit
+    if (isMobile || alreadyOpened) return;
+
+    setTimeout(function () {
+      if (Tawk_API.isChatMinimized()) {
+        Tawk_API.maximize();
+        try { sessionStorage.setItem("tawk_auto_opened", "1"); } catch (e) {}
+      }
+    }, TAWK_AUTO_OPEN_DELAY);
+  };
+
+  // 2. Force the chat open whenever an agent sends a message while it's minimized
+  Tawk_API.onChatMessageAgent = function () {
+    if (Tawk_API.isChatHidden && Tawk_API.isChatHidden()) {
+      Tawk_API.showWidget();
+    }
+    if (Tawk_API.isChatMinimized && Tawk_API.isChatMinimized()) {
+      Tawk_API.maximize();
+    }
+  };
+
+  (function () {
+    var s1 = document.createElement("script"),
+      s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = "https://embed.tawk.to/6ab6c95db36b4b344430c4ec/1k3d055nf";
+    s1.charset = "UTF-8";
+    s1.setAttribute("crossorigin", "*");
+    s0.parentNode.insertBefore(s1, s0);
+  })();
+</script>
+<!--End of Tawk.to Script-->
   </body>
 </html>

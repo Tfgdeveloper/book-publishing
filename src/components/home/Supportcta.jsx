@@ -27,7 +27,7 @@ const fadeUp = {
   transition: { duration: 0.8, ease },
 };
 
-const telHref = (phone) => `tel:${phone.replace(/\D/g, "")}`;
+const telHref = (phone) => `tel:+1${phone.replace(/\D/g, "")}`;
 
 /* Halftone dots rising from the bottom, shared by the support and stats cards */
 const Halftone = ({ at = "58% 105%", size = "22% 75%" }) => (
@@ -71,9 +71,9 @@ const SOCIALS = [
    Variant 1: SUPPORT (original)
 ================================================================ */
 function SupportVariant({
-  phone = "+123 - 234 - 1234",
+  phone = "(727) 618-7790",
   socials = SOCIALS,
-  arrowHref = "#contact",
+  arrowHref = "/contact",
 }) {
   return (
     <section className="mb-10 py-7 lg:py-5">
@@ -125,11 +125,11 @@ function SupportVariant({
               <div className="relative flex h-full flex-col justify-center gap-5 px-8 py-10 pl-12 text-white lg:flex-row lg:items-center lg:justify-between lg:py-12 lg:pl-28 lg:pr-10">
                 <div>
                   <h2 className="font-heading text-2xl leading-tight md:text-3xl">
-                    <span className="font-regular">Still You Need </span>
-                    <span className="font-medium">Our Support?</span>
+                    <span className="font-regular">Still Need  </span>
+                    <span className="font-medium">Expert Support?</span>
                   </h2>
                   <p className="mt-2 text-sm text-white/85">
-                    Don't wait, make a smart &amp; logical quote here. It's pretty easy.
+                    Take the next step toward becoming a published author with Author House Inc. Requesting a custom publishing quote is quick, seamless, and completely hassle-free! 
                   </p>
                 </div>
 
@@ -164,9 +164,8 @@ function SupportVariant({
    Variant 2: PUBLISH (full-width banner with book collage)
 ================================================================ */
 function PublishVariant({
-  phone = "(000) 123 4567",
   buttonText = "Get a Quote",
-  buttonHref = "#contact",
+
   image = "image/cta-books.png", // transparent PNG of the book collage
   imageAlt = "A collection of published books",
 }) {
@@ -185,18 +184,16 @@ function PublishVariant({
         <Container className="relative grid items-center gap-10 py-8 lg:grid-cols-[2fr_1fr] lg:py-13">
           <motion.div {...fadeUp} className="text-white">
             <h2 className="font-heading text-3xl leading-tight md:text-4xl">
-              <span className="medium">Publish Your Book </span>
-              <span className="regular">Journey With Us</span>
+              <span className="medium">Begin Your Publishing</span>
+              <span className="regular"> Journey with Us </span>
             </h2>
             <p className="mt-4  text-sm leading-6 text-white/85 font-light">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-              has been the industry's standard dummy text ever since the 1500s, when an unknown
-              printer took a galley of type and scrambled it to make a type specimen book.
+               Turning your manuscript into a successful published book has never been easier. Partner with Author House Inc to receive personalized guidance, expert editing, creative design, and strategic marketing tailored specifically to your goals. Let’s bring your vision to bookstores and readers worldwide. 
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-0">
-              <PrimaryButton openModal variant="glass" className="px-[32px] py-[12px]">{buttonText}</PrimaryButton>
-              <SecondaryButton variant="glassIcon" href="tel:+123 - 234 - 1234">+123 - 234 - 1234</SecondaryButton>
+              <PrimaryButton openModal variant="glass" className="px-[32px] py-[12px]">Get a Free Quote</PrimaryButton>
+              <SecondaryButton variant="glassIcon" href="tel:+17276187790">(727) 618-7790</SecondaryButton>
             </div>
           </motion.div>
 
@@ -225,9 +222,9 @@ function PublishVariant({
    Variant 3: STATS ("We are growing like crazy")
 ================================================================ */
 const STATS = [
-  { prefix: "$", value: 28, suffix: "M", label: "raised by startups" },
-  { prefix: "$", value: 28, suffix: "M", label: "raised by startups" },
-  { prefix: "$", value: 28, suffix: "M", label: "raised by startups" },
+  { prefix: "", value: 2500, suffix: "+", label: "Books Published" },
+  { prefix: "", value: 100, suffix: "+", label: "Bestselling Authors" },
+  { prefix: "$", value: 98, suffix: "%", label: "Author Satisfaction" },
 ];
 
 /* Counts up from 0 the first time it scrolls into view */
@@ -270,12 +267,12 @@ function StatsVariant({ stats = STATS }) {
           <div className="relative grid items-center gap-10 lg:grid-cols-[1fr_2fr]">
             <div>
               <h2 className="font-heading text-3xl leading-tight md:text-4xl">
-                <span className="regular">We are </span>
-                <span className="medium">growing </span>
-                <span className="block regular">like crazy</span>
+                <span className="regular">We Are  </span>
+                <span className="medium">Growing  </span>
+                <span className="block regular">Rapidly</span>
               </h2>
               <p className="mt-3 max-w-xs text-sm font-light leading-6 text-white/85">
-                Lorem ipsum dolor, consectetur elit. Praesent porta metus.
+                Author House Inc continues to expand its global reach, empowering authors worldwide with top-tier publishing solutions and measurable marketplace success. 
               </p>
             </div>
 

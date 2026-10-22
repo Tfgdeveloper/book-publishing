@@ -1,877 +1,1277 @@
 /* ==================================================================
    Content for every inner service page.
 
+   Page layout (ServiceDetail.jsx):
+     1. hero      → Hero (title, description, consultation form)
+     2. overview  → BookWriting (image, title, text, points, buttons)
+     3. SupportCTA (shared, no data needed)
+     4. process   → ProcessSteps (title, text, 3 steps)
+
    - The key is the last part of the URL: /services/<key>
      It must match the `href` of the service in servicesMenu
      (ServicesMegaMenu.jsx).
-   - Wrap words in *asterisks* inside a hero/about/portfolio/faq
-     `title` to make them bold italic, like the rest of the site.
-   - `about.image` paths are placeholders. Swap in your own images.
+   - Wrap words in *asterisks* inside any `title` to emphasize them,
+     like the rest of the site.
+   - `overview.points` shows in two columns. An even number looks best.
+   - `process.steps[].icon` is a name from the ICONS map in
+     ProcessSteps.jsx: lightbulb, pen, book, file, search, palette,
+     printer, globe, rocket, megaphone, message, check, video, mic,
+     sparkles, clipboard. An image path also works.
+   - `overview.image` paths are placeholders. Swap in your own images.
    ================================================================== */
 
 export const servicePages = {
   /* ---------------------------------------------------------------- */
-  /*  CREATION & PUBLISHING                                           */
+  /*  WRITING & EDITING                                               */
   /* ---------------------------------------------------------------- */
-  "writing-storytelling": {
-    name: "Writing & Storytelling",
-    category: "Creation & Publishing",
+  "book-writing": {
+    name: "Book Writing",
+    category: "Writing & Editing",
     seo: {
-      title: "Children’s Book Writing & Storytelling Services",
-      description: "Professional children’s book writers who turn your idea into a story kids want to read again and again.",
+      title: "Professional Book Writing Services",
+      description: "Experienced writers who turn your idea, outline or notes into a complete, ready-to-publish book.",
     },
     hero: {
-      badge: "Writing & Storytelling",
+      badge: "Book Writing",
+      title: "Turn Your Idea Into a *Finished Book*",
+      description: "Our writers take your idea from first outline to final chapter, so you end up with a book you’re proud to put your name on.",
+    },
+    overview: {
+      title: "*Book Writing,* Where Your Story Comes to Life",
+      description: "Every great book starts with an idea and someone who can carry it to the last page. Our writers work with you from outline to final chapter, in your voice and on a schedule you can count on.",
+      points: [
+        "Fiction and novels",
+        "Memoir and biography",
+        "Business and self-help",
+        "Detailed chapter outline",
+        "Written in your voice",
+        "Chapter-by-chapter reviews",
+        "Revisions included",
+        "100% rights and royalties",
+      ],
+      image: "/image/services/book-writing.png",
+      imageAlt: "Books written by our team",
+      ctaLabel: "Start Your Story",
+    },
+    process: {
+      title: "From Idea to *Finished Book* Step by Step",
+      description: "Three simple stages take your book from a first conversation to a manuscript ready for publishing.",
+      steps: [
+        { icon: "lightbulb", title: "Share Your Idea", text: "Tell us about your book on a free call. We learn your goals, your readers and how you like to tell a story." },
+        { icon: "clipboard", title: "Plan the Outline", text: "We build a chapter-by-chapter outline with you, so we agree on the shape of the book before writing starts." },
+        { icon: "pen", title: "Write and Revise", text: "Your writer drafts each chapter and you review as we go, until the full manuscript feels like yours." },
+      ],
+    },
+  },
+
+  ghostwriting: {
+    name: "Ghostwriting",
+    category: "Writing & Editing",
+    seo: {
+      title: "Confidential Ghostwriting Services",
+      description: "Professional ghostwriters who write your book in your voice, with your name on the cover and full confidentiality.",
+    },
+    hero: {
+      badge: "Ghostwriting",
+      title: "Your Story, *Your Name*, Our Words",
+      description: "A professional ghostwriter captures your voice and writes your book, while you keep full credit, rights and royalties.",
+    },
+    overview: {
+      title: "*Ghostwriting,* Your Story Told in Your Voice",
+      description: "You bring the experience, ideas and expertise. A professional ghostwriter turns them into a book that sounds like you, with your name on the cover and complete confidentiality.",
+      points: [
+        "Confidential, NDA available",
+        "Voice-capture interviews",
+        "Memoir and autobiography",
+        "Business and thought leadership",
+        "Fiction and novels",
+        "Research and fact-checking",
+        "Your name on the cover",
+        "Full rights and royalties",
+      ],
+      image: "/image/services/ghostwriting.png",
+      imageAlt: "Ghostwritten books",
+      ctaLabel: "Start Your Story",
+    },
+    process: {
+      title: "From Conversation to *Your Book* Step by Step",
+      description: "We do the writing while you stay in control of the story at every stage.",
+      steps: [
+        { icon: "message", title: "Talk It Through", text: "Recorded interviews help us learn your story, your opinions and the way you naturally speak." },
+        { icon: "pen", title: "We Write in Your Voice", text: "Your ghostwriter drafts the book chapter by chapter, matching your tone and style." },
+        { icon: "check", title: "Review and Approve", text: "You read every chapter and request changes until the book says exactly what you mean." },
+      ],
+    },
+  },
+
+  "childrens-book-writing": {
+    name: "Children’s Book Writing",
+    category: "Writing & Editing",
+    seo: {
+      title: "Children’s Book Writing Services",
+      description: "Children’s book writers who turn your idea into a story kids want to read again and again.",
+    },
+    hero: {
+      badge: "Children’s Book Writing",
       title: "Turn Your Idea Into a *Story Kids Love*",
       description: "Our children’s authors shape your idea into a story with the rhythm, heart and humor young readers come back to night after night.",
     },
-    about: {
-      badge: "About This Service",
-      title: "Stories Written for *Little Readers*",
-      description: [
-        "Writing for children is its own craft. Every word has to earn its place, every page has to move the story forward, and the ending has to land for a five-year-old and the adult reading aloud.",
-        "You bring the idea, a character, a lesson or just a feeling. We plan the story with you, write it in your voice and revise until it feels like yours.",
+    overview: {
+      title: "*Children’s Book Writing,* Stories Kids Ask for Again",
+      description: "Writing for children takes rhythm, heart and every word in the right place. Our children’s authors shape your idea into a story that young readers and the adults reading aloud both love.",
+      points: [
+        "Picture books",
+        "Early readers",
+        "Chapter books",
+        "Middle grade novels",
+        "Rhyming and prose stories",
+        "Age-appropriate language",
+        "Written in your voice",
+        "Ready for illustration",
       ],
-      points: ["Picture books, early readers and chapter books", "Written in your voice, you keep all rights", "Unlimited revisions until you’re happy"],
-      image: "/images/services/writing.png",
+      image: "/image/services/childrens-writing.png",
+      imageAlt: "Children’s books written by our team",
+      ctaLabel: "Start Your Story",
     },
-    portfolio: {
-      title: "Stories We’ve *Written*",
-      description: "A few of the books our writers have brought to life for authors like you.",
-    },
-    faq: {
-      title: "Writing *Questions*",
-      items: [
-        { question: "Do I need a full story before I start?", answer: "No. Many authors come to us with a single idea or a character. We help you shape it into a full story outline before any writing begins." },
-        { question: "Will the book sound like me?", answer: "Yes. We start with a call to learn how you speak and what matters to you, then write in your voice. You review every draft." },
-        { question: "Who owns the story?", answer: "You do. You keep 100% of the rights and royalties, and your name goes on the cover." },
-        { question: "How long does writing take?", answer: "A picture book usually takes 2 to 4 weeks. Chapter books and middle grade novels take longer depending on length." },
-      ],
-    },
-  },
-
-  "editing-proofreading": {
-    name: "Editing & Proofreading",
-    category: "Creation & Publishing",
-    seo: {
-      title: "Children’s Book Editing & Proofreading Services",
-      description: "Editors who make sure your children’s book reads clearly, fits its age group and is free of errors before print.",
-    },
-    hero: {
-      badge: "Editing & Proofreading",
-      title: "Polish Your Story *Page by Page*",
-      description: "Our editors tighten your story, check it reads right for its age group and catch every typo before it goes to print.",
-    },
-    about: {
-      badge: "About This Service",
-      title: "Editing That Keeps *Your Voice*",
-      description: [
-        "A good edit makes your story clearer without making it sound like someone else wrote it. We look at pacing, word choice and reading level so young readers stay with you to the last page.",
-        "Proofreading is the final pass. We check spelling, punctuation and consistency so nothing distracts from the story once it’s printed.",
-      ],
-      points: ["Developmental, line and copy editing", "Reading-level checks for each age group", "Tracked changes so you see every edit"],
-      image: "/images/services/editing.png",
-    },
-    portfolio: {
-      title: "Books We’ve *Edited*",
-      description: "Manuscripts we’ve helped polish and prepare for publishing.",
-    },
-    faq: {
-      title: "Editing *Questions*",
-      items: [
-        { question: "What’s the difference between editing and proofreading?", answer: "Editing improves the story itself, its structure, pacing and wording. Proofreading is the final check for typos and small errors." },
-        { question: "Will you rewrite my book?", answer: "No. We suggest changes and explain why. You decide what to keep." },
-        { question: "Can you check my book is right for its age group?", answer: "Yes. We check vocabulary, sentence length and themes against the age range you’re writing for." },
-        { question: "How will I receive the edits?", answer: "You’ll get a Word document with tracked changes and comments, plus a short summary of our main suggestions." },
+    process: {
+      title: "From Spark to *Storybook* Step by Step",
+      description: "A clear path from your first idea to a story ready for illustration.",
+      steps: [
+        { icon: "lightbulb", title: "Share the Spark", text: "A character, a lesson or just a feeling is enough. We talk through your idea and who it’s for." },
+        { icon: "book", title: "Plan the Story", text: "We outline the story and page breaks so the pacing works beautifully when read aloud." },
+        { icon: "pen", title: "Write and Polish", text: "We write the manuscript in your voice and refine it with you until every page lands." },
       ],
     },
   },
 
-  "formatting-ebooks": {
-    name: "Formatting & eBooks",
-    category: "Creation & Publishing",
+  "book-editing": {
+    name: "Book Editing",
+    category: "Writing & Editing",
     seo: {
-      title: "Children’s Book Formatting & eBook Conversion",
-      description: "Print-ready layouts and eBook files for Kindle, Apple Books and more, set up for children’s books with illustrations.",
+      title: "Professional Book Editing Services",
+      description: "Developmental and line editing that strengthens your story, structure and style without losing your voice.",
     },
     hero: {
-      badge: "Formatting & eBooks",
-      title: "Print-Ready Pages and *eBooks* That Work",
-      description: "We lay out your text and illustrations for print and convert your book into eBook files for Kindle, Apple Books and every major store.",
+      badge: "Book Editing",
+      title: "Make Your Manuscript *Shine*",
+      description: "Our editors strengthen your structure, pacing and prose, so your book reads the way you always imagined it would.",
     },
-    about: {
-      badge: "About This Service",
-      title: "Your Book, *Ready to Publish*",
-      description: [
-        "Children’s books mix text and art on every page, which makes formatting harder than a novel. We place each line so it’s easy to read and never covers an important part of the illustration.",
-        "For eBooks, we build fixed-layout files that keep your pages looking exactly as designed on tablets and phones.",
+    overview: {
+      title: "*Book Editing,* Make Every Chapter Stronger",
+      description: "A strong edit sharpens your structure, pacing and prose without changing who you are as a writer. Our editors are matched to your genre and explain every suggestion they make.",
+      points: [
+        "Developmental editing",
+        "Line editing",
+        "Structure and pacing",
+        "Character and plot review",
+        "Clarity and flow",
+        "Genre-matched editors",
+        "Tracked changes",
+        "Editorial letter",
       ],
-      points: ["Print files for paperback and hardcover", "Fixed-layout eBooks for Kindle and Apple Books", "Files that pass store checks the first time"],
-      image: "/images/services/formatting.png",
+      image: "/image/services/editing.png",
+      imageAlt: "Edited manuscripts",
+      ctaLabel: "Get Your Book Edited",
     },
-    portfolio: {
-      title: "Books We’ve *Formatted*",
-      description: "Print and digital editions we’ve prepared for publishing.",
-    },
-    faq: {
-      title: "Formatting *Questions*",
-      items: [
-        { question: "Which file types will I get?", answer: "Print-ready PDFs for your printer or Amazon KDP, plus EPUB and KPF files for eBook stores." },
-        { question: "Can you format a book someone else illustrated?", answer: "Yes. Send us your text and high-resolution illustrations and we’ll handle the layout." },
-        { question: "Will my eBook look the same as the print book?", answer: "Yes. We use fixed-layout eBooks so each page looks just like the printed version." },
-        { question: "What if the store rejects my files?", answer: "We fix and resend them at no extra cost until they’re approved." },
+    process: {
+      title: "From Draft to *Polished Manuscript* Step by Step",
+      description: "We start with the big picture and work down to every sentence.",
+      steps: [
+        { icon: "search", title: "Read and Assess", text: "Your editor reads the full manuscript and notes what works and what holds it back." },
+        { icon: "pen", title: "Edit in Depth", text: "We edit with tracked changes and comments, so you see every suggestion and the reason for it." },
+        { icon: "check", title: "Revise and Finalize", text: "You accept or reject changes, and we review the revised draft with you." },
       ],
     },
   },
 
-  "publishing-isbn": {
-    name: "Publishing & ISBN",
-    category: "Creation & Publishing",
+  "proofreading-copy-editing": {
+    name: "Proofreading & Copy Editing",
+    category: "Writing & Editing",
     seo: {
-      title: "Children’s Book Publishing, ISBN & Copyright",
-      description: "We handle ISBN registration, copyright and Amazon KDP setup so your children’s book is published correctly.",
+      title: "Proofreading & Copy Editing Services",
+      description: "Careful copy editing and proofreading that catches errors and inconsistencies before your book goes to print.",
     },
     hero: {
-      badge: "Publishing & ISBN",
-      title: "Publish Your Book *the Right Way*",
-      description: "We register your ISBN and copyright, set up your publishing accounts and get your book live, while you keep every right and royalty.",
+      badge: "Proofreading & Copy Editing",
+      title: "Catch Every Error *Before Print*",
+      description: "We fix grammar, spelling, punctuation and consistency so nothing distracts readers from your story.",
     },
-    about: {
-      badge: "About This Service",
-      title: "We Handle the *Paperwork*",
-      description: [
-        "Publishing comes with accounts, forms and rules that can stall a finished book for weeks. We take care of them so your book goes live without the guesswork.",
-        "Everything is set up in your name. You own the ISBN, the copyright and the publishing account, and every royalty goes straight to you.",
+    overview: {
+      title: "*Proofreading & Copy Editing,* Error-Free Before Print",
+      description: "Readers and reviewers notice mistakes. We fix grammar, spelling, punctuation and consistency so your book looks as professional as anything on the shelf.",
+      points: [
+        "Grammar and spelling",
+        "Punctuation",
+        "Consistent names and terms",
+        "Style guide checks",
+        "US or UK English",
+        "Formatting consistency",
+        "PDF proof corrections",
+        "Fast turnaround",
       ],
-      points: ["ISBN and barcode registration", "Copyright registration support", "Amazon KDP and IngramSpark setup"],
-      image: "/images/services/publishing.png",
+      image: "/image/services/proofreading.png",
+      imageAlt: "Proofread book pages",
+      ctaLabel: "Get a Proofread",
     },
-    portfolio: {
-      title: "Books We’ve *Published*",
-      description: "Titles we’ve helped authors publish and launch.",
-    },
-    faq: {
-      title: "Publishing *Questions*",
-      items: [
-        { question: "Do I need an ISBN?", answer: "You need one to sell in bookstores and libraries. Amazon offers a free one, but it lists Amazon as the publisher, so most authors buy their own." },
-        { question: "Who owns the publishing account?", answer: "You do. We set it up in your name and hand over full access." },
-        { question: "Do you take a share of my royalties?", answer: "No. You keep 100% of your royalties." },
-        { question: "How long until my book is live?", answer: "Usually 1 to 2 weeks once your files are final, depending on store review times." },
+    process: {
+      title: "From Manuscript to *Print-Ready Text* Step by Step",
+      description: "Two careful passes catch errors in the text and again after layout.",
+      steps: [
+        { icon: "file", title: "Send Your Manuscript", text: "Share your Word file and tell us your preferred style guide and English spelling." },
+        { icon: "pen", title: "Copy Edit the Text", text: "We correct grammar, word choice and consistency with tracked changes you can review." },
+        { icon: "check", title: "Proofread the Pages", text: "After layout, we check the final pages for typos and small slips before print." },
       ],
     },
   },
 
-  distribution: {
-    name: "Distribution & Global Reach",
-    category: "Creation & Publishing",
+  "formatting-typesetting": {
+    name: "Formatting & Typesetting",
+    category: "Writing & Editing",
     seo: {
-      title: "Children’s Book Distribution Worldwide",
-      description: "Get your children’s book into online stores, bookshops and libraries around the world.",
+      title: "Book Formatting & Typesetting Services",
+      description: "Professional typesetting for print and eBook, with clean layouts that pass every store’s checks.",
     },
     hero: {
-      badge: "Distribution & Global Reach",
+      badge: "Formatting & Typesetting",
+      title: "Pages That Look *Professionally Published*",
+      description: "We typeset your manuscript into clean, readable pages for print and eBook, ready to upload to any store.",
+    },
+    overview: {
+      title: "*Formatting & Typesetting,* Pages That Look Published",
+      description: "Clean typesetting makes your book easy to read and shows readers it was made with care. We prepare print and ebook files that meet each store’s exact requirements.",
+      points: [
+        "Paperback and hardcover PDFs",
+        "Kindle and EPUB files",
+        "Chapter headings and openers",
+        "Headers and page numbers",
+        "Images and tables",
+        "Front and back matter",
+        "KDP and IngramSpark specs",
+        "Free fixes if rejected",
+      ],
+      image: "/image/services/formatting.png",
+      imageAlt: "Formatted book pages",
+      ctaLabel: "Format My Book",
+    },
+    process: {
+      title: "From Manuscript to *Print-Ready Files* Step by Step",
+      description: "Clean, store-approved files without the technical headaches.",
+      steps: [
+        { icon: "file", title: "Share Your Files", text: "Send your final manuscript, images and the formats you need." },
+        { icon: "palette", title: "Lay Out the Pages", text: "We typeset every page and send a preview for your approval." },
+        { icon: "printer", title: "Deliver Final Files", text: "You receive print and ebook files ready to upload to any store." },
+      ],
+    },
+  },
+
+  "manuscript-assessment": {
+    name: "Manuscript Assessment",
+    category: "Writing & Editing",
+    seo: {
+      title: "Manuscript Assessment & Critique",
+      description: "An honest, detailed report on your manuscript’s strengths, weaknesses and next steps.",
+    },
+    hero: {
+      badge: "Manuscript Assessment",
+      title: "Know Exactly *What to Fix Next*",
+      description: "An experienced editor reads your full manuscript and gives you an honest, detailed report on what works and what needs work.",
+    },
+    overview: {
+      title: "*Manuscript Assessment,* Honest Feedback, Clear Direction",
+      description: "Friends and family are kind, but they rarely tell you what’s holding your book back. Our editors give you honest feedback and a clear plan for your next draft.",
+      points: [
+        "Full manuscript read",
+        "Plot and structure feedback",
+        "Character and voice review",
+        "Pacing analysis",
+        "Market and genre fit",
+        "Detailed written report",
+        "Prioritized next steps",
+        "Follow-up call",
+      ],
+      image: "/image/services/manuscript-assessment.png",
+      imageAlt: "Manuscript with editor notes",
+      ctaLabel: "Get My Assessment",
+    },
+    process: {
+      title: "From Draft to *Clear Direction* Step by Step",
+      description: "A focused review that tells you exactly where your manuscript stands.",
+      steps: [
+        { icon: "file", title: "Submit Your Manuscript", text: "Send your draft along with your goals and any questions you have." },
+        { icon: "search", title: "Expert Read-Through", text: "A genre-matched editor reads every page and takes detailed notes." },
+        { icon: "message", title: "Report and Call", text: "You receive a written report, then talk it through with your editor." },
+      ],
+    },
+  },
+
+  /* ---------------------------------------------------------------- */
+  /*  PUBLISHING                                                      */
+  /* ---------------------------------------------------------------- */
+  "global-distribution": {
+    name: "Global Distribution",
+    category: "Publishing",
+    seo: {
+      title: "Global Book Distribution Services",
+      description: "Get your book into online stores, bookshops and libraries around the world.",
+    },
+    hero: {
+      badge: "Global Distribution",
       title: "Put Your Book *on Shelves Worldwide*",
       description: "We list your book with online stores, bookshops and library suppliers so readers can find it wherever they shop.",
     },
-    about: {
-      badge: "About This Service",
-      title: "One Book, *Many Stores*",
-      description: [
-        "Amazon is only one place parents buy books. We distribute your book through networks that reach thousands of retailers, bookshops and libraries worldwide.",
-        "We set prices for each market and make sure your book shows up correctly in every catalog it’s listed in.",
+    overview: {
+      title: "*Global Distribution,* Your Book in Stores Worldwide",
+      description: "Amazon is only one place readers buy books. We list your book with online retailers, bookshops and library suppliers around the world, priced right for every market.",
+      points: [
+        "Amazon worldwide",
+        "Barnes & Noble",
+        "Apple Books and Kobo",
+        "Google Play Books",
+        "Bookstore catalogs",
+        "Library suppliers",
+        "Pricing for each country",
+        "Royalties paid to you",
       ],
-      points: ["Amazon, Barnes & Noble, Apple Books and more", "Bookstore and library catalog listings", "Pricing set for each country"],
-      image: "/images/services/distribution.png",
+      image: "/image/services/distribution.png",
+      imageAlt: "Books available in stores worldwide",
+      ctaLabel: "Distribute My Book",
     },
-    portfolio: {
-      title: "Books We’ve *Distributed*",
-      description: "Titles now available in stores and libraries around the world.",
+    process: {
+      title: "From Final Files to *Global Shelves* Step by Step",
+      description: "One setup puts your book in front of readers in dozens of countries.",
+      steps: [
+        { icon: "clipboard", title: "Prepare Your Listing", text: "We set up your metadata, categories and pricing for each market." },
+        { icon: "globe", title: "List Everywhere", text: "Your book goes out to online stores, bookshop catalogs and library suppliers." },
+        { icon: "check", title: "Check and Monitor", text: "We confirm your book shows correctly in each catalog and fix any listing issues." },
+      ],
     },
-    faq: {
-      title: "Distribution *Questions*",
-      items: [
-        { question: "Which stores will my book be in?", answer: "Major online stores like Amazon, Barnes & Noble and Apple Books, plus the catalogs bookstores and libraries order from." },
-        { question: "Will bookstores stock my book?", answer: "Listing makes your book available to order. For stores to stock it, see our Bookstore & Library Promotion service." },
-        { question: "Can I sell in other countries?", answer: "Yes. We set up pricing for each market where your book will be sold." },
-        { question: "How are royalties paid?", answer: "Each platform pays you directly into your own account." },
+  },
+
+  "ebook-publishing": {
+    name: "Ebook Publishing",
+    category: "Publishing",
+    seo: {
+      title: "Ebook Publishing Services",
+      description: "We convert, upload and publish your ebook on Kindle, Apple Books, Kobo and more.",
+    },
+    hero: {
+      badge: "Ebook Publishing",
+      title: "Your Book on *Every Screen*",
+      description: "We convert your book into polished ebook files and publish it on Kindle, Apple Books, Kobo, Google Play and more.",
+    },
+    overview: {
+      title: "*Ebook Publishing,* Your Book on Every Screen",
+      description: "Ebooks are the fastest way to reach readers worldwide, but each store has its own file rules and review process. We handle all of it so your ebook goes live without delays.",
+      points: [
+        "Kindle publishing",
+        "Apple Books",
+        "Kobo and Google Play",
+        "EPUB conversion",
+        "Fixed-layout ebooks",
+        "Metadata and keywords",
+        "Pricing strategy",
+        "Accounts in your name",
+      ],
+      image: "/image/services/ebook-publishing.png",
+      imageAlt: "Ebook on a tablet",
+      ctaLabel: "Publish My Ebook",
+    },
+    process: {
+      title: "From Manuscript to *Live Ebook* Step by Step",
+      description: "Your ebook, converted, listed and live on the stores you choose.",
+      steps: [
+        { icon: "file", title: "Convert Your Book", text: "We turn your manuscript into clean EPUB and Kindle files that look great on any device." },
+        { icon: "clipboard", title: "Set Up Your Listings", text: "We write your metadata, pick categories and set pricing on each store." },
+        { icon: "rocket", title: "Go Live", text: "Your ebook is published and you get full access to every account." },
+      ],
+    },
+  },
+
+  "print-book-publishing": {
+    name: "Print Book Publishing",
+    category: "Publishing",
+    seo: {
+      title: "Print Book Publishing Services",
+      description: "Paperback and hardcover publishing through print-on-demand, with proofs checked before release.",
+    },
+    hero: {
+      badge: "Print Book Publishing",
+      title: "Hold Your Book *in Your Hands*",
+      description: "We publish your paperback and hardcover editions through print-on-demand, so readers can order a printed copy anywhere.",
+    },
+    overview: {
+      title: "*Print Book Publishing,* Hold Your Book in Your Hands",
+      description: "Seeing your book in print is a special moment. We set up paperback and hardcover editions, check the proofs and make sure every detail is right before it goes on sale.",
+      points: [
+        "Paperback editions",
+        "Hardcover editions",
+        "Print-on-demand",
+        "Amazon KDP setup",
+        "IngramSpark setup",
+        "Trim size and paper advice",
+        "Proof copy review",
+        "Author copies at cost",
+      ],
+      image: "/image/services/print-publishing.png",
+      imageAlt: "Printed paperback and hardcover books",
+      ctaLabel: "Print My Book",
+    },
+    process: {
+      title: "From Files to *Printed Book* Step by Step",
+      description: "No stock to buy, no warehouse to manage, just a printed book readers can order.",
+      steps: [
+        { icon: "clipboard", title: "Choose Your Format", text: "We help you pick trim size, paper and cover finish for your book." },
+        { icon: "printer", title: "Set Up Printing", text: "We upload your files to print-on-demand platforms in your name." },
+        { icon: "check", title: "Approve the Proof", text: "We order and check a proof copy before your book goes on sale." },
+      ],
+    },
+  },
+
+  "isbn-barcode": {
+    name: "ISBN & Barcode",
+    category: "Publishing",
+    seo: {
+      title: "ISBN & Barcode Registration",
+      description: "We register your ISBNs and create barcodes so your book is listed under your own name as publisher.",
+    },
+    hero: {
+      badge: "ISBN & Barcode",
+      title: "Your Book, *Officially Registered*",
+      description: "We register your ISBNs and create the barcodes your printer and stores need, listed under your name as publisher.",
+    },
+    overview: {
+      title: "*ISBN & Barcode,* Registered in Your Name",
+      description: "An ISBN identifies your book in every store, library and catalog. We register yours in your name, fill in your book’s details correctly and create the barcode for your back cover.",
+      points: [
+        "ISBN registration",
+        "One ISBN per format",
+        "Listed as your imprint",
+        "Book metadata setup",
+        "Back-cover barcode",
+        "Price-encoded barcode",
+        "Print and ebook formats",
+        "You own every number",
+      ],
+      image: "/image/services/isbn.png",
+      imageAlt: "Book back cover with barcode",
+      ctaLabel: "Register My ISBN",
+    },
+    process: {
+      title: "From Paperwork to *Registered Book* Step by Step",
+      description: "We take care of the forms so your book is properly identified everywhere.",
+      steps: [
+        { icon: "clipboard", title: "Gather Book Details", text: "We collect your title, formats, imprint name and pricing." },
+        { icon: "file", title: "Register Your ISBNs", text: "We register an ISBN for each format, all in your name." },
+        { icon: "check", title: "Add Your Barcode", text: "We create the barcode and place it on your back cover file." },
+      ],
+    },
+  },
+
+  "copyright-assistance": {
+    name: "Copyright Assistance",
+    category: "Publishing",
+    seo: {
+      title: "Book Copyright Registration Assistance",
+      description: "Help preparing and filing your book’s copyright registration so your work is on record.",
+    },
+    hero: {
+      badge: "Copyright Assistance",
+      title: "Protect Your Work *From Day One*",
+      description: "We help you prepare and file your copyright registration, so your book is officially on record as yours.",
+    },
+    overview: {
+      title: "*Copyright Assistance,* Your Work on Official Record",
+      description: "Your work is protected the moment you write it, and registration puts that on official record. We guide you through the filing so it’s done right the first time. We’re not a law firm, so legal disputes should go to a lawyer.",
+      points: [
+        "Registration filing support",
+        "Copyright page for your book",
+        "Co-author guidance",
+        "Illustration rights check",
+        "Application review",
+        "Deposit copy guidance",
+        "Filing status updates",
+        "Plain-English explanations",
+      ],
+      image: "/image/services/copyright.png",
+      imageAlt: "Book with copyright page",
+      ctaLabel: "Protect My Book",
+    },
+    process: {
+      title: "From Manuscript to *Registered Copyright* Step by Step",
+      description: "A simple process that puts your ownership on record.",
+      steps: [
+        { icon: "search", title: "Review Your Rights", text: "We check who wrote and illustrated the book so the right owners are listed." },
+        { icon: "file", title: "Prepare the Application", text: "We help you complete the forms and prepare your deposit copy." },
+        { icon: "check", title: "File and Track", text: "Your application is submitted and we keep you updated on its status." },
       ],
     },
   },
 
   /* ---------------------------------------------------------------- */
-  /*  ILLUSTRATION & DESIGN                                           */
+  /*  DESIGN & ILLUSTRATION                                           */
   /* ---------------------------------------------------------------- */
-  "book-illustration": {
-    name: "Book Illustration",
-    category: "Illustration & Design",
+  "book-cover-design": {
+    name: "Book Cover Design",
+    category: "Design & Illustration",
+    seo: {
+      title: "Professional Book Cover Design",
+      description: "Book covers that stand out on the shelf and in Amazon search results, designed for your genre.",
+    },
+    hero: {
+      badge: "Book Cover Design",
+      title: "A Cover That *Gets Picked Up*",
+      description: "We design covers that stand out on the shelf and in Amazon search, and tell readers instantly what kind of book it is.",
+    },
+    overview: {
+      title: "*Book Cover Design,* Judged by Its Cover",
+      description: "Readers decide in seconds whether to click. Your cover needs a clear title, a strong image and a look that fits your genre, and we design every part of it.",
+      points: [
+        "Front, spine and back",
+        "Genre-matched design",
+        "Custom or stock imagery",
+        "Title typography",
+        "Amazon thumbnail testing",
+        "Ebook cover version",
+        "Audiobook cover version",
+        "Full rights to the design",
+      ],
+      image: "/image/services/cover-design.png",
+      imageAlt: "Book covers we designed",
+      ctaLabel: "Design My Cover",
+    },
+    process: {
+      title: "From Concept to *Final Cover* Step by Step",
+      description: "A cover built around your story, your genre and your readers.",
+      steps: [
+        { icon: "message", title: "Share Your Vision", text: "Tell us about your book, your readers and covers you admire." },
+        { icon: "palette", title: "See Concepts", text: "We design two to three concepts, then refine the one you choose." },
+        { icon: "check", title: "Finalize the Files", text: "You receive print, ebook and promo versions sized for every platform." },
+      ],
+    },
+  },
+
+  "childrens-book-illustration": {
+    name: "Children’s Book Illustration",
+    category: "Design & Illustration",
     seo: {
       title: "Children’s Book Illustration Services",
       description: "Hand-painted or digital children’s book illustrations in the art style your story needs.",
     },
     hero: {
-      badge: "Book Illustration",
+      badge: "Children’s Book Illustration",
       title: "Artwork That Makes *Every Page Shine*",
       description: "Our illustrators create hand-painted or digital artwork for every page, in the style that fits your story.",
     },
-    about: {
-      badge: "About This Service",
-      title: "Pictures That *Tell the Story*",
-      description: [
-        "In a children’s book, the illustrations do half the storytelling. Our artists read your manuscript closely and plan each spread so the pictures add to the words.",
-        "You choose from a range of styles, from soft watercolor to bold digital art, and see sketches before any final artwork is painted.",
+    overview: {
+      title: "*Children’s Book Illustration,* Art That Tells the Story",
+      description: "In a children’s book, the illustrations do half the storytelling. Our artists plan each spread around your words and show you sketches before any final artwork is painted.",
+      points: [
+        "Watercolor and digital",
+        "Cartoon and realistic styles",
+        "Full-page spreads",
+        "Spot illustrations",
+        "Cover artwork",
+        "Sketch approval first",
+        "Consistent characters",
+        "Full commercial rights",
       ],
-      points: ["Watercolor, digital, cartoon and realistic styles", "Sketch approval before final art", "Full commercial rights to all artwork"],
-      image: "/images/services/illustration.png",
+      image: "/image/services/illustration.png",
+      imageAlt: "Children’s book illustrations",
+      ctaLabel: "Illustrate My Book",
     },
-    portfolio: {
-      title: "Our *Illustration* Work",
-      description: "Browse styles from books our illustrators have brought to life.",
-    },
-    faq: {
-      title: "Illustration *Questions*",
-      items: [
-        { question: "Can I choose the art style?", answer: "Yes. We share style samples at the start and you pick the one that fits your story best." },
-        { question: "Will I see the art before it’s finished?", answer: "Yes. You approve rough sketches for every page before we move to final color." },
-        { question: "How many illustrations does a picture book need?", answer: "Most picture books have 12 to 16 spreads, plus the cover. We’ll recommend a number based on your story." },
-        { question: "Who owns the illustrations?", answer: "You do. You receive full commercial rights to use the artwork anywhere." },
+    process: {
+      title: "From Sketch to *Finished Art* Step by Step",
+      description: "You see and approve every page before the final artwork is created.",
+      steps: [
+        { icon: "palette", title: "Pick a Style", text: "We share style samples and you choose the look that fits your story." },
+        { icon: "pen", title: "Approve Sketches", text: "We sketch every page layout and adjust until you’re happy." },
+        { icon: "sparkles", title: "Final Color", text: "Your illustrator paints the final art and delivers print-ready files." },
       ],
     },
   },
 
   "character-design": {
     name: "Character Design",
-    category: "Illustration & Design",
+    category: "Design & Illustration",
     seo: {
-      title: "Children’s Book Character Design",
-      description: "Lovable children’s book characters designed to look the same on every page.",
+      title: "Book Character Design Services",
+      description: "Memorable characters designed to look the same on every page, cover and product.",
     },
     hero: {
       badge: "Character Design",
-      title: "Characters Kids *Can’t Forget*",
-      description: "We design lovable characters with a look and personality that stays consistent on every page and every book in your series.",
+      title: "Characters Readers *Can’t Forget*",
+      description: "We design memorable characters with a look and personality that stays consistent on every page and every book in your series.",
     },
-    about: {
-      badge: "About This Service",
-      title: "Faces Readers *Fall For*",
-      description: [
-        "Kids remember characters long after they forget the plot. We design yours from personality first, so their look, expressions and poses all feel true to who they are.",
-        "You get a character sheet with turnarounds and expressions that any illustrator can follow, which keeps your character the same across books, toys and merchandise.",
+    overview: {
+      title: "*Character Design,* Faces Readers Never Forget",
+      description: "Readers remember characters long after they forget the plot. We design yours from personality first, then give you a character sheet any illustrator can follow.",
+      points: [
+        "Three initial concepts",
+        "Personality-led design",
+        "Front, side and back views",
+        "Expression sheets",
+        "Pose sheets",
+        "Color palette guide",
+        "Series-ready designs",
+        "Merchandise-ready files",
       ],
-      points: ["Front, side and back turnarounds", "Expression and pose sheets", "Ready for series, toys and merchandise"],
-      image: "/images/services/character-design.png",
+      image: "/image/services/character-design.png",
+      imageAlt: "Character design sheets",
+      ctaLabel: "Design My Character",
     },
-    portfolio: {
-      title: "Characters We’ve *Created*",
-      description: "A gallery of characters designed for authors and their stories.",
-    },
-    faq: {
-      title: "Character Design *Questions*",
-      items: [
-        { question: "What do I need to share to get started?", answer: "A description of your character’s personality, age and any must-have details. Reference images help but aren’t required." },
-        { question: "How many design options will I see?", answer: "We start with three concepts. You pick one and we refine it with you." },
-        { question: "What’s a character sheet?", answer: "A guide showing your character from every angle with different expressions, so they look the same in every illustration." },
-        { question: "Can I use the character on merchandise?", answer: "Yes. You own the design and can use it on toys, clothing and anything else." },
-      ],
-    },
-  },
-
-  "cover-interior-design": {
-    name: "Cover & Interior Design",
-    category: "Illustration & Design",
-    seo: {
-      title: "Children’s Book Cover & Interior Design",
-      description: "Book covers that stand out on the shelf and on Amazon, with interiors designed to match.",
-    },
-    hero: {
-      badge: "Cover & Interior Design",
-      title: "A Cover That *Gets Picked Up*",
-      description: "We design covers that stand out on the shelf and in Amazon search results, with interior pages laid out to match.",
-    },
-    about: {
-      badge: "About This Service",
-      title: "Judged *by Its Cover*",
-      description: [
-        "Parents decide in seconds whether to pick up a book. Your cover needs a clear title, a strong image and a look that tells them exactly who it’s for.",
-        "We design the front, spine and back cover, then carry the same fonts and style through the interior so the whole book feels like one piece.",
-      ],
-      points: ["Front, spine and back cover", "Matching title page and interior style", "Thumbnails tested for Amazon search"],
-      image: "/images/services/cover-design.png",
-    },
-    portfolio: {
-      title: "Covers We’ve *Designed*",
-      description: "Covers and interiors from books on shelves today.",
-    },
-    faq: {
-      title: "Cover Design *Questions*",
-      items: [
-        { question: "Can you use my existing illustrations on the cover?", answer: "Yes. We can design around your artwork or create new cover art." },
-        { question: "How many cover concepts will I get?", answer: "Two to three concepts to start, then revisions on the one you choose." },
-        { question: "Do you design the back cover too?", answer: "Yes. Front, spine and back are included, sized for your printer." },
-        { question: "Will the cover work as a small thumbnail?", answer: "Yes. We check every cover at Amazon thumbnail size so the title stays readable." },
+    process: {
+      title: "From Description to *Character Sheet* Step by Step",
+      description: "A character with a clear personality and a look that never drifts.",
+      steps: [
+        { icon: "message", title: "Describe Your Character", text: "Share their personality, age and any must-have details." },
+        { icon: "palette", title: "Review Concepts", text: "We design three concepts and refine the one you love." },
+        { icon: "check", title: "Get Your Sheet", text: "You receive turnarounds, expressions and poses ready for any illustrator." },
       ],
     },
   },
 
-  "print-ebook-design": {
-    name: "Print & eBook Design",
-    category: "Illustration & Design",
+  "interior-design": {
+    name: "Interior Design",
+    category: "Design & Illustration",
     seo: {
-      title: "Print & eBook Design for Children’s Books",
-      description: "Children’s book files set up for hardcover, paperback and every eBook format.",
+      title: "Book Interior Design Services",
+      description: "Beautiful, readable book interiors with custom chapter openers, fonts and layouts.",
     },
     hero: {
-      badge: "Print & eBook Design",
-      title: "One Design, *Every Format*",
-      description: "We set up your book for hardcover, paperback and eBook, so it looks right whether it’s held in small hands or read on a tablet.",
+      badge: "Interior Design",
+      title: "Pages Readers *Enjoy Turning*",
+      description: "We design your book’s interior with fonts, chapter openers and layouts that match your cover and suit your genre.",
     },
-    about: {
-      badge: "About This Service",
-      title: "Built for *Print and Screen*",
-      description: [
-        "Each format has its own rules for page size, bleed, color and resolution. Getting them wrong can mean blurry art or text cut off at the edge of the page.",
-        "We prepare every version to your printer’s and each store’s exact specs, so your book looks as good in print as it does on screen.",
+    overview: {
+      title: "*Interior Design,* Designed Inside and Out",
+      description: "A great interior makes reading effortless. We carry your cover’s style through every page, from the title page to chapter openings, so your book feels like one complete piece.",
+      points: [
+        "Custom chapter openers",
+        "Title and copyright pages",
+        "Fonts chosen for your genre",
+        "Drop caps and ornaments",
+        "Image and caption layouts",
+        "Workbook and cookbook layouts",
+        "Print and ebook versions",
+        "Editable source files",
       ],
-      points: ["Hardcover, paperback and board book setups", "Color-checked files for print", "eBook versions for every major store"],
-      image: "/images/services/print-design.png",
+      image: "/image/services/interior-design.png",
+      imageAlt: "Designed book interior pages",
+      ctaLabel: "Design My Interior",
     },
-    portfolio: {
-      title: "Books in *Every Format*",
-      description: "Print and digital editions we’ve designed.",
+    process: {
+      title: "From Plain Text to *Designed Pages* Step by Step",
+      description: "An interior that looks as good as your cover.",
+      steps: [
+        { icon: "book", title: "Set the Style", text: "We choose fonts and design elements that match your cover and genre." },
+        { icon: "palette", title: "Approve Samples", text: "You review sample pages before we lay out the whole book." },
+        { icon: "printer", title: "Lay Out the Book", text: "We design every page and deliver print and ebook files." },
+      ],
     },
-    faq: {
-      title: "Print & eBook *Questions*",
-      items: [
-        { question: "What trim size should my book be?", answer: "It depends on your book type and printer. We’ll recommend a size that suits your story and keeps printing costs sensible." },
-        { question: "Why does my art look different in print?", answer: "Screens and paper show color differently. We convert and check your files so print colors stay close to the original." },
-        { question: "Can you make a board book version?", answer: "Yes. We can adapt your design for board books with thicker pages and simpler layouts." },
-        { question: "Do I get the source files?", answer: "Yes. You receive the final print and eBook files, plus the editable design files." },
+  },
+
+  "graphics-infographics": {
+    name: "Graphics & Infographics",
+    category: "Design & Illustration",
+    seo: {
+      title: "Book Graphics & Infographics Design",
+      description: "Charts, diagrams and infographics that make your book’s ideas clear and easy to share.",
+    },
+    hero: {
+      badge: "Graphics & Infographics",
+      title: "Make Complex Ideas *Easy to See*",
+      description: "We turn your data, processes and big ideas into clear charts, diagrams and infographics for your book and marketing.",
+    },
+    overview: {
+      title: "*Graphics & Infographics,* Ideas Readers Grasp Fast",
+      description: "A good graphic explains in seconds what takes a page of text. We design visuals that match your book’s style and work in print, in ebooks and on social media.",
+      points: [
+        "Charts and graphs",
+        "Diagrams and frameworks",
+        "Process flows",
+        "Timelines",
+        "Social media versions",
+        "Press and slide versions",
+        "Color or grayscale",
+        "Matched to your book’s style",
+      ],
+      image: "/image/services/infographics.png",
+      imageAlt: "Book infographics and charts",
+      ctaLabel: "Create My Graphics",
+    },
+    process: {
+      title: "From Notes to *Clear Visuals* Step by Step",
+      description: "Your ideas, turned into graphics readers remember and share.",
+      steps: [
+        { icon: "file", title: "Share Your Content", text: "Send your data, notes or a rough sketch of what you want to show." },
+        { icon: "palette", title: "Design Drafts", text: "We design first drafts and refine them with your feedback." },
+        { icon: "check", title: "Final Files", text: "You get files for print, ebook, social media and presentations." },
+      ],
+    },
+  },
+
+  "activity-book-design": {
+    name: "Activity Book Design",
+    category: "Design & Illustration",
+    seo: {
+      title: "Activity Book Design Services",
+      description: "Coloring books, puzzle books and workbooks designed to engage kids and sell well.",
+    },
+    hero: {
+      badge: "Activity Book Design",
+      title: "Pages Kids Want to *Fill In*",
+      description: "Coloring pages, puzzles, mazes and worksheets designed to keep kids busy, learning and coming back for more.",
+    },
+    overview: {
+      title: "*Activity Book Design,* Pages Kids Love to Fill",
+      description: "Activity books give kids more time with your characters and give parents and teachers something useful to share. We design every page for the right age group.",
+      points: [
+        "Coloring pages",
+        "Mazes and puzzles",
+        "Dot-to-dot and matching",
+        "Tracing and writing practice",
+        "Workbooks and worksheets",
+        "Age-matched activities",
+        "Your characters throughout",
+        "KDP-ready files",
+      ],
+      image: "/image/services/activity-books.png",
+      imageAlt: "Activity book pages",
+      ctaLabel: "Design My Activity Book",
+    },
+    process: {
+      title: "From Idea to *Activity Book* Step by Step",
+      description: "Fun, age-right pages built around your story and characters.",
+      steps: [
+        { icon: "lightbulb", title: "Plan the Activities", text: "We pick activity types and page count to suit your readers’ age." },
+        { icon: "palette", title: "Design the Pages", text: "We design each page in your illustration style and send previews." },
+        { icon: "printer", title: "Prepare for Print", text: "You get print-ready files and printable pages for free downloads." },
       ],
     },
   },
 
   /* ---------------------------------------------------------------- */
-  /*  ANIMATION                                                       */
+  /*  MARKETING & PUBLICITY                                           */
   /* ---------------------------------------------------------------- */
-  animation: {
-    name: "2D & 3D Animation",
-    category: "Animation",
+  "book-marketing": {
+    name: "Book Marketing",
+    category: "Marketing & Publicity",
     seo: {
-      title: "2D & 3D Animation for Children’s Books",
-      description: "Bring your children’s book characters to life with smooth, colorful 2D and 3D animation.",
+      title: "Book Marketing Services for Authors",
+      description: "A complete marketing plan that helps the right readers find, buy and recommend your book.",
     },
     hero: {
-      badge: "2D & 3D Animation",
-      title: "Watch Your Characters *Come Alive*",
-      description: "We animate your characters in smooth, colorful 2D or 3D, ready for videos, social media and your author website.",
+      badge: "Book Marketing",
+      title: "Get Your Book *in Front of Readers*",
+      description: "We build and run a marketing plan that helps the right readers find your book, buy it and tell their friends.",
     },
-    about: {
-      badge: "About This Service",
-      title: "From Page *to Screen*",
-      description: [
-        "Kids today meet stories on screens as often as on paper. Animation lets your characters move, talk and reach readers on YouTube, social media and in classrooms.",
-        "We build animations from your existing illustrations, so the characters on screen look exactly like the ones in your book.",
+    overview: {
+      title: "*Book Marketing,* Reach the Readers Who Need Your Book",
+      description: "Without marketing, even great books go unnoticed. We start by understanding your readers, then combine the channels that reach them best and report on what’s working.",
+      points: [
+        "Marketing strategy",
+        "Reader research",
+        "Positioning and messaging",
+        "Amazon optimization",
+        "Social media campaigns",
+        "Email marketing",
+        "Review campaigns",
+        "Monthly reports",
       ],
-      points: ["2D and 3D animation styles", "Built from your book’s illustrations", "Voiceover and music included"],
-      image: "/images/services/animation.png",
+      image: "/image/services/book-marketing.png",
+      imageAlt: "Book marketing campaign",
+      ctaLabel: "Market My Book",
     },
-    portfolio: {
-      title: "Our *Animation* Work",
-      description: "Characters and stories we’ve brought to life on screen.",
-    },
-    faq: {
-      title: "Animation *Questions*",
-      items: [
-        { question: "Should I choose 2D or 3D?", answer: "2D stays closest to your book’s illustrations. 3D adds depth and works well for series and toys. We’ll help you decide." },
-        { question: "How long can the animation be?", answer: "Anything from a 15-second social clip to a full animated story. We quote based on length." },
-        { question: "Do you add voices and music?", answer: "Yes. Voiceover, music and sound effects are included." },
-        { question: "Where can I use the animation?", answer: "Anywhere: YouTube, social media, your website, school visits and presentations." },
+    process: {
+      title: "From Plan to *Growing Sales* Step by Step",
+      description: "A marketing plan built around your book and the readers who will love it.",
+      steps: [
+        { icon: "search", title: "Understand Your Readers", text: "We research who your book is for and where they discover new books." },
+        { icon: "clipboard", title: "Build the Plan", text: "We choose the right channels and set clear goals for your budget." },
+        { icon: "rocket", title: "Launch and Optimize", text: "We run your campaigns and adjust them based on monthly results." },
       ],
     },
   },
 
-  "book-trailers": {
-    name: "Book Trailers",
-    category: "Animation",
-    seo: {
-      title: "Children’s Book Trailers",
-      description: "Short animated videos that tease your children’s book on social media and Amazon.",
-    },
-    hero: {
-      badge: "Book Trailers",
-      title: "A Trailer That *Sells the Story*",
-      description: "Short, animated videos that tease your book and get parents clicking on social media and Amazon.",
-    },
-    about: {
-      badge: "About This Service",
-      title: "30 Seconds *to Hook Readers*",
-      description: [
-        "A book trailer shows parents what your story feels like before they buy. It’s one of the easiest ways to stand out in a social feed.",
-        "We script, animate and edit the trailer from your illustrations, then deliver versions sized for every platform.",
-      ],
-      points: ["Script, animation and editing", "Sized for Instagram, TikTok, YouTube and Amazon", "Music and voiceover included"],
-      image: "/images/services/book-trailers.png",
-    },
-    portfolio: {
-      title: "Trailers We’ve *Made*",
-      description: "Watch trailers we’ve created for children’s books.",
-    },
-    faq: {
-      title: "Book Trailer *Questions*",
-      items: [
-        { question: "How long is a book trailer?", answer: "Usually 30 to 60 seconds. We also make short cuts for reels and stories." },
-        { question: "Can I add it to my Amazon page?", answer: "Yes. We deliver a version that meets Amazon’s video requirements." },
-        { question: "Do you write the script?", answer: "Yes. We write it from your book and send it for approval before animating." },
-        { question: "What if I don’t have illustrations yet?", answer: "We can create artwork for the trailer, or pair it with our illustration service." },
-      ],
-    },
-  },
-
-  audiobooks: {
-    name: "Audiobooks & Voiceovers",
-    category: "Animation",
-    seo: {
-      title: "Children’s Audiobooks & Voiceovers",
-      description: "Professional narrators and character voices for children’s audiobooks.",
-    },
-    hero: {
-      badge: "Audiobooks & Voiceovers",
-      title: "A Story That *Sounds as Good as It Reads*",
-      description: "Professional narrators and character voices that bring your book to life for listening at bedtime, in the car or in class.",
-    },
-    about: {
-      badge: "About This Service",
-      title: "Stories Made *for Listening*",
-      description: [
-        "Many kids hear stories before they can read them. An audiobook lets your book reach them anywhere, with a warm voice that makes every character distinct.",
-        "You choose the narrator from auditions. We handle recording, editing and mastering to the standards Audible and other platforms require.",
-      ],
-      points: ["Kid-friendly narrators you choose from auditions", "Character voices, music and sound effects", "Ready for Audible, Apple and Spotify"],
-      image: "/images/services/audiobooks.png",
-    },
-    portfolio: {
-      title: "Listen to *Our Work*",
-      description: "Samples from audiobooks we’ve produced.",
-    },
-    faq: {
-      title: "Audiobook *Questions*",
-      items: [
-        { question: "Can I choose the narrator?", answer: "Yes. We send auditions from several narrators and you pick the voice you like best." },
-        { question: "Can I narrate it myself?", answer: "Yes. We can coach and record you, then edit and master the audio." },
-        { question: "Where will my audiobook be sold?", answer: "We prepare files for Audible, Apple Books, Spotify and other major platforms." },
-        { question: "Do you add music and sound effects?", answer: "Yes, if you’d like them. They work especially well for younger listeners." },
-      ],
-    },
-  },
-
-  "interactive-ebooks": {
-    name: "Interactive eBooks",
-    category: "Animation",
-    seo: {
-      title: "Interactive eBooks for Children",
-      description: "Tap-to-play children’s eBooks with sound, animation and read-along highlighting.",
-    },
-    hero: {
-      badge: "Interactive eBooks",
-      title: "Books Kids Can *Tap, Play and Read*",
-      description: "Tap-to-play pages with sound, animation and read-along highlighting that keep young readers turning pages.",
-    },
-    about: {
-      badge: "About This Service",
-      title: "Reading That *Feels Like Play*",
-      description: [
-        "Interactive eBooks turn reading into something kids want to do. Characters move when tapped, words light up as they’re read aloud, and hidden surprises reward curious readers.",
-        "We keep every interaction tied to the story, so the fun supports reading instead of distracting from it.",
-      ],
-      points: ["Tap-to-play animations and sounds", "Read-along word highlighting", "Works on tablets and phones"],
-      image: "/images/services/interactive-ebooks.png",
-    },
-    portfolio: {
-      title: "Interactive Books *We’ve Built*",
-      description: "Try pages from interactive eBooks we’ve created.",
-    },
-    faq: {
-      title: "Interactive eBook *Questions*",
-      items: [
-        { question: "Which devices do interactive eBooks work on?", answer: "Most tablets and phones, including iPad and Android devices." },
-        { question: "Can it read the story aloud?", answer: "Yes. We add narration with words that highlight as they’re read." },
-        { question: "Where can I sell it?", answer: "Through Apple Books and as a standalone app or web book, depending on the features you choose." },
-        { question: "Can I turn my printed book into an interactive one?", answer: "Yes. We build it from your existing text and illustrations." },
-      ],
-    },
-  },
-
-  /* ---------------------------------------------------------------- */
-  /*  MARKETING                                                       */
-  /* ---------------------------------------------------------------- */
   "amazon-marketing": {
-    name: "Amazon Book Marketing",
-    category: "Marketing",
+    name: "Amazon Marketing",
+    category: "Marketing & Publicity",
     seo: {
-      title: "Amazon Marketing for Children’s Books",
-      description: "Optimized Amazon listings, keywords and ads that help parents find your children’s book.",
+      title: "Amazon Book Marketing Services",
+      description: "Optimized Amazon listings, keywords and ads that help readers find your book.",
     },
     hero: {
-      badge: "Amazon Book Marketing",
+      badge: "Amazon Marketing",
       title: "Get Found *on Amazon*",
-      description: "Optimized listings, keywords and ads that put your book in front of parents searching for their next bedtime story.",
+      description: "Optimized listings, keywords and ads that put your book in front of readers searching for their next read.",
     },
-    about: {
-      badge: "About This Service",
-      title: "Rank Higher, *Sell More*",
-      description: [
-        "Most children’s books on Amazon are never seen because they don’t show up in search. We fix that with the right categories, keywords and a listing that convinces parents to buy.",
-        "Then we run and manage Amazon ads, adjusting them weekly so your budget goes to the searches that actually sell books.",
+    overview: {
+      title: "*Amazon Marketing,* Get Found Where Readers Shop",
+      description: "Most books on Amazon are never seen because they don’t show up in search. We fix your listing, then run ads that put your budget behind the searches that actually sell books.",
+      points: [
+        "Keyword research",
+        "Category selection",
+        "Book description copy",
+        "A+ Content design",
+        "Amazon ads setup",
+        "Weekly ad optimization",
+        "Author Central setup",
+        "Sales reports",
       ],
-      points: ["Keyword and category research", "Book description and A+ Content", "Managed Amazon ad campaigns"],
-      image: "/images/services/amazon-marketing.png",
+      image: "/image/services/amazon-marketing.png",
+      imageAlt: "Amazon book listing",
+      ctaLabel: "Grow on Amazon",
     },
-    portfolio: {
-      title: "Amazon *Success Stories*",
-      description: "Books we’ve helped climb the Amazon rankings.",
-    },
-    faq: {
-      title: "Amazon Marketing *Questions*",
-      items: [
-        { question: "How soon will I see results?", answer: "Listing improvements can help within days. Ads usually need 2 to 4 weeks to find what works best." },
-        { question: "What budget do I need for ads?", answer: "You can start small. We’ll recommend a daily budget based on your goals." },
-        { question: "What is A+ Content?", answer: "Extra images and text on your Amazon page that show off your illustrations and help parents decide to buy." },
-        { question: "Do I need to give you my Amazon login?", answer: "No. You can add us as a user with limited access to your ad account." },
+    process: {
+      title: "From Listing to *More Sales* Step by Step",
+      description: "A stronger listing and smarter ads, working together.",
+      steps: [
+        { icon: "search", title: "Audit Your Listing", text: "We review your keywords, categories, description and reviews." },
+        { icon: "pen", title: "Optimize the Page", text: "We rewrite your description, add A+ Content and fix your categories." },
+        { icon: "rocket", title: "Run Smart Ads", text: "We launch Amazon ads and adjust them weekly to lower costs and raise sales." },
       ],
     },
   },
 
   "book-launch": {
-    name: "Book Launch & Promotion",
-    category: "Marketing",
+    name: "Book Launch",
+    category: "Marketing & Publicity",
     seo: {
-      title: "Children’s Book Launch & Promotion",
-      description: "Pre-orders, early reviews and launch-week promotion for children’s books.",
+      title: "Book Launch Services",
+      description: "Pre-orders, early reviews and launch-week promotion so your book starts strong.",
     },
     hero: {
-      badge: "Book Launch & Promotion",
+      badge: "Book Launch",
       title: "Launch Your Book *With a Bang*",
       description: "We plan your launch from pre-orders to early reviews, so your book starts strong from day one.",
     },
-    about: {
-      badge: "About This Service",
-      title: "A Launch *Worth Celebrating*",
-      description: [
-        "The first weeks after release decide how visible your book becomes. A planned launch builds early sales and reviews, which helps stores show your book to more readers.",
-        "We set up pre-orders, send early copies to reviewers and run a launch-week campaign across email, social media and Amazon.",
+    overview: {
+      title: "*Book Launch,* Start Strong From Day One",
+      description: "The first weeks after release decide how visible your book becomes. A planned launch builds early sales and reviews, which helps stores show your book to more readers.",
+      points: [
+        "Launch timeline",
+        "Pre-order setup",
+        "Advance reader copies",
+        "Early reviewer outreach",
+        "Launch-week promotions",
+        "Social media content",
+        "Email announcements",
+        "Relaunch campaigns",
       ],
-      points: ["Pre-order setup and promotion", "Early reviewer outreach", "Launch-week campaign plan"],
-      image: "/images/services/book-launch.png",
+      image: "/image/services/book-launch.png",
+      imageAlt: "Book launch celebration",
+      ctaLabel: "Plan My Launch",
     },
-    portfolio: {
-      title: "Launches We’ve *Run*",
-      description: "Books we’ve helped launch to their first readers.",
-    },
-    faq: {
-      title: "Launch *Questions*",
-      items: [
-        { question: "When should I start planning my launch?", answer: "Ideally 6 to 8 weeks before release, so there’s time for pre-orders and early reviews." },
-        { question: "How do you get early reviews?", answer: "We send advance copies to readers, parents and book bloggers who review children’s books." },
-        { question: "Can you help if my book is already out?", answer: "Yes. We can run a relaunch campaign to give it a fresh push." },
-        { question: "What does a launch include?", answer: "Pre-order setup, reviewer outreach, social media content and a launch-week promotion plan." },
+    process: {
+      title: "From Countdown to *Launch Day* Step by Step",
+      description: "Momentum built before release, so launch week counts.",
+      steps: [
+        { icon: "clipboard", title: "Plan the Timeline", text: "We map out every task from six to eight weeks before release." },
+        { icon: "message", title: "Build Early Buzz", text: "We set up pre-orders and send advance copies to reviewers." },
+        { icon: "rocket", title: "Launch Week Push", text: "We run promotions across email, social media and Amazon." },
       ],
     },
   },
 
   "social-media-marketing": {
     name: "Social Media Marketing",
-    category: "Marketing",
+    category: "Marketing & Publicity",
     seo: {
-      title: "Social Media Marketing for Children’s Authors",
+      title: "Social Media Marketing for Authors",
       description: "Posts and reels that grow your reader community on Instagram, TikTok and Facebook.",
     },
     hero: {
       badge: "Social Media Marketing",
       title: "Grow Your *Reader Community*",
-      description: "Posts and reels that reach parents, teachers and fellow book lovers on Instagram, TikTok and Facebook.",
+      description: "Posts and reels that reach readers and fellow book lovers on Instagram, TikTok, Facebook and more.",
     },
-    about: {
-      badge: "About This Service",
-      title: "Where Parents *Find Books*",
-      description: [
-        "Parents and teachers discover new children’s books on social media every day. Consistent, eye-catching posts keep your book in front of them.",
-        "We create content from your illustrations and story, post on a regular schedule and reply to your growing community.",
+    overview: {
+      title: "*Social Media Marketing,* Where Readers Find Books",
+      description: "Readers discover new books on social media every day, from BookTok to Bookstagram. We create content from your book, post on a steady schedule and grow your community.",
+      points: [
+        "Instagram and Facebook",
+        "TikTok and BookTok",
+        "Pinterest and LinkedIn",
+        "Content calendar",
+        "Reels and short videos",
+        "Graphics from your book",
+        "Community management",
+        "Paid social ads",
       ],
-      points: ["Content calendar and posting", "Reels and short videos from your book", "Community replies and engagement"],
-      image: "/images/services/social-media.png",
+      image: "/image/services/social-media.png",
+      imageAlt: "Social media posts for a book",
+      ctaLabel: "Grow My Audience",
     },
-    portfolio: {
-      title: "Social Content *We’ve Created*",
-      description: "Posts and reels we’ve made for children’s authors.",
-    },
-    faq: {
-      title: "Social Media *Questions*",
-      items: [
-        { question: "Which platforms do you manage?", answer: "Instagram, TikTok, Facebook and Pinterest. We’ll recommend where your readers spend time." },
-        { question: "How often will you post?", answer: "Usually 3 to 5 times a week, depending on your plan." },
-        { question: "Do I approve posts first?", answer: "Yes. You see the content calendar in advance and can change anything." },
-        { question: "Can you run paid social ads?", answer: "Yes. We can add paid campaigns to reach more parents in your target age group." },
-      ],
-    },
-  },
-
-  "website-email-marketing": {
-    name: "Website & Email Marketing",
-    category: "Marketing",
-    seo: {
-      title: "Author Websites & Email Marketing",
-      description: "An author website and newsletter that keep readers coming back for your next book.",
-    },
-    hero: {
-      badge: "Website & Email Marketing",
-      title: "A Home for *Your Books*",
-      description: "An author website and newsletter that keep readers, parents and teachers coming back for your next book.",
-    },
-    about: {
-      badge: "About This Service",
-      title: "Readers Who *Stay With You*",
-      description: [
-        "Social media platforms change, but your website and email list are yours. They’re where readers learn about you, buy your books and hear about what’s next.",
-        "We build a site that shows off your books and illustrations, then set up a newsletter that turns visitors into loyal readers.",
-      ],
-      points: ["Author website design and setup", "Newsletter signup and welcome emails", "Free activity downloads to grow your list"],
-      image: "/images/services/website-email.png",
-    },
-    portfolio: {
-      title: "Author Sites *We’ve Built*",
-      description: "Websites and newsletters we’ve created for authors.",
-    },
-    faq: {
-      title: "Website & Email *Questions*",
-      items: [
-        { question: "Can I update the website myself?", answer: "Yes. We build it so you can easily add books, events and posts." },
-        { question: "What should my newsletter include?", answer: "Book news, behind-the-scenes art, activity sheets and event dates. We’ll help you plan it." },
-        { question: "How do I get people to sign up?", answer: "We set up a free download, like a coloring page, that readers get when they subscribe." },
-        { question: "Can I sell books on my website?", answer: "Yes. We can link to stores or set up direct sales for signed copies." },
+    process: {
+      title: "From First Post to *Loyal Following* Step by Step",
+      description: "Consistent content that keeps your book in front of readers.",
+      steps: [
+        { icon: "search", title: "Find Your Audience", text: "We identify where your readers spend time and what they engage with." },
+        { icon: "sparkles", title: "Create Content", text: "We plan a calendar and create posts and reels you approve in advance." },
+        { icon: "message", title: "Post and Engage", text: "We publish on schedule and reply to your growing community." },
       ],
     },
   },
 
-  "bookstore-library-promotion": {
-    name: "Bookstore & Library Promotion",
-    category: "Marketing",
+  "author-branding": {
+    name: "Author Branding",
+    category: "Marketing & Publicity",
     seo: {
-      title: "Bookstore & Library Promotion for Children’s Books",
-      description: "We pitch your children’s book to bookstores and libraries so it lands on real shelves.",
+      title: "Author Branding Services",
+      description: "A consistent look, voice and online presence that makes you recognizable across every book and platform.",
     },
     hero: {
-      badge: "Bookstore & Library Promotion",
-      title: "Get Your Book *on Real Shelves*",
-      description: "We pitch your book to independent bookstores, school libraries and public library catalogs.",
-    },
-    about: {
-      badge: "About This Service",
-      title: "Where Kids *Discover Books*",
-      description: [
-        "Many children find their favorite books in libraries and local bookstores. Getting there takes the right listings, a strong sell sheet and direct outreach.",
-        "We prepare professional materials for your book and contact the stores and libraries most likely to stock it.",
-      ],
-      points: ["Sell sheets for buyers and librarians", "Outreach to bookstores and libraries", "Story-time and event pitches"],
-      image: "/images/services/bookstore-library.png",
-    },
-    portfolio: {
-      title: "Books *on Shelves*",
-      description: "Titles we’ve helped place in bookstores and libraries.",
-    },
-    faq: {
-      title: "Bookstore & Library *Questions*",
-      items: [
-        { question: "Will bookstores definitely stock my book?", answer: "We can’t promise placement, but professional materials and targeted outreach greatly improve your chances." },
-        { question: "What’s a sell sheet?", answer: "A one-page summary of your book with pricing and ordering details that buyers and librarians use to decide." },
-        { question: "Do I need to be in a distribution catalog?", answer: "Yes. Stores and libraries order through these catalogs. See our Distribution service." },
-        { question: "Can you book readings and events?", answer: "Yes. We pitch story times and author visits to the stores and libraries we contact." },
-      ],
-    },
-  },
-
-  "educational-marketing": {
-    name: "Educational Book Marketing",
-    category: "Marketing",
-    seo: {
-      title: "Marketing Children’s Books to Schools & Teachers",
-      description: "Reach teachers and schools with classroom-ready outreach for your children’s book.",
-    },
-    hero: {
-      badge: "Educational Book Marketing",
-      title: "Bring Your Book *Into Classrooms*",
-      description: "We reach teachers, schools and educators with outreach that shows how your book fits their lessons.",
-    },
-    about: {
-      badge: "About This Service",
-      title: "Books Teachers *Want to Use*",
-      description: [
-        "Teachers are always looking for books that make lessons easier to teach and more fun to learn. If your book fits a subject or theme, schools can become your biggest readers.",
-        "We match your book to curriculum topics, prepare teacher-friendly materials and reach educators directly.",
-      ],
-      points: ["Curriculum and theme matching", "Teacher guides and lesson ideas", "Outreach to schools and educators"],
-      image: "/images/services/educational-marketing.png",
-    },
-    portfolio: {
-      title: "Books in *Classrooms*",
-      description: "Titles we’ve helped bring to teachers and schools.",
-    },
-    faq: {
-      title: "Educational Marketing *Questions*",
-      items: [
-        { question: "Is my book right for schools?", answer: "If it teaches a skill, explores a theme or supports a subject, it likely is. We’ll review it with you." },
-        { question: "Do I need a teacher’s guide?", answer: "It helps a lot. Teachers are more likely to use books with ready-made activities. See our Educational Materials service." },
-        { question: "Can you arrange school visits?", answer: "Yes. We pitch in-person and virtual author visits to schools." },
-        { question: "Who do you contact?", answer: "Teachers, school librarians and education networks matched to your book’s age group." },
-      ],
-    },
-  },
-
-  /* ---------------------------------------------------------------- */
-  /*  CHARACTER BRANDING                                              */
-  /* ---------------------------------------------------------------- */
-  "author-character-branding": {
-    name: "Author & Character Branding",
-    category: "Character Branding",
-    seo: {
-      title: "Author & Character Branding",
-      description: "A consistent look, voice and personality for you and your characters across books, your website and social media.",
-    },
-    hero: {
-      badge: "Author & Character Branding",
+      badge: "Author Branding",
       title: "A Brand Readers *Recognize*",
-      description: "We give you and your characters a consistent look, voice and personality across books, your website and social media.",
+      description: "We give you a consistent look, voice and online presence across your books, website and social media.",
     },
-    about: {
-      badge: "About This Service",
-      title: "More Than *One Book*",
-      description: [
-        "The authors kids remember have a recognizable style. Their characters, colors and voice feel the same in every book, video and post.",
-        "We build that brand for you, with a logo, colors, fonts and character guidelines you can use everywhere.",
+    overview: {
+      title: "*Author Branding,* A Name Readers Recognize",
+      description: "The authors readers follow have a recognizable style across every book and post. We build that brand for you and an author website that ties it all together.",
+      points: [
+        "Author logo",
+        "Brand colors and fonts",
+        "Author bio writing",
+        "Photo direction",
+        "Author website",
+        "Social media templates",
+        "Press kit design",
+        "Brand guidelines",
       ],
-      points: ["Author logo and brand colors", "Character style guide", "Brand kit for social media and your website"],
-      image: "/images/services/branding.png",
+      image: "/image/services/author-branding.png",
+      imageAlt: "Author brand kit",
+      ctaLabel: "Build My Brand",
     },
-    portfolio: {
-      title: "Brands *We’ve Built*",
-      description: "Author and character brands we’ve created.",
-    },
-    faq: {
-      title: "Branding *Questions*",
-      items: [
-        { question: "Do I need a brand for one book?", answer: "If you plan a series or more books, a brand helps readers recognize your work right away." },
-        { question: "What’s in a brand kit?", answer: "Your logo, colors, fonts, character guidelines and templates for social media." },
-        { question: "Can you brand my existing characters?", answer: "Yes. We build the brand around the characters you already have." },
-        { question: "Will the brand work on merchandise?", answer: "Yes. We design it to work on books, screens, toys and clothing." },
-      ],
-    },
-  },
-
-  merchandise: {
-    name: "Merchandise & Design",
-    category: "Character Branding",
-    seo: {
-      title: "Children’s Book Merchandise Design",
-      description: "Plush toys, apparel and stickers featuring your children’s book characters.",
-    },
-    hero: {
-      badge: "Merchandise & Design",
-      title: "Your Characters, *Off the Page*",
-      description: "Plush toys, apparel and stickers featuring your characters, designed and ready to produce.",
-    },
-    about: {
-      badge: "About This Service",
-      title: "Something Kids *Can Hug*",
-      description: [
-        "Merchandise turns readers into fans. A plush toy or t-shirt keeps your characters in kids’ lives long after the book is closed, and it’s another way to earn from your work.",
-        "We design products from your characters and prepare files for manufacturers or print-on-demand stores.",
-      ],
-      points: ["Plush toys, t-shirts, stickers and more", "Production-ready design files", "Print-on-demand store setup"],
-      image: "/images/services/merchandise.png",
-    },
-    portfolio: {
-      title: "Merchandise *We’ve Designed*",
-      description: "Products we’ve created from children’s book characters.",
-    },
-    faq: {
-      title: "Merchandise *Questions*",
-      items: [
-        { question: "Do you manufacture the products?", answer: "We design them and prepare production files. We can connect you with manufacturers or set up print-on-demand." },
-        { question: "What’s print-on-demand?", answer: "Products are made only when someone orders, so you don’t need to buy stock upfront." },
-        { question: "Can I sell merchandise at events?", answer: "Yes. We can prepare files for small batch orders for signings and school visits." },
-        { question: "Are the designs safe for kids’ products?", answer: "We design to common safety guidelines, but your manufacturer handles product safety testing." },
+    process: {
+      title: "From First Impression to *Lasting Brand* Step by Step",
+      description: "One consistent identity across every book, page and post.",
+      steps: [
+        { icon: "search", title: "Discover Your Brand", text: "We learn about your books, readers and the impression you want to make." },
+        { icon: "palette", title: "Design the Identity", text: "We create your logo, colors, fonts and brand guidelines." },
+        { icon: "globe", title: "Roll It Out", text: "We apply your brand to your website, social media and press kit." },
       ],
     },
   },
 
-  "educational-materials": {
-    name: "Educational Materials",
-    category: "Character Branding",
+  "book-publicity": {
+    name: "Book Publicity",
+    category: "Marketing & Publicity",
     seo: {
-      title: "Educational Materials for Children’s Books",
-      description: "Worksheets, activity books and lesson plans built around your children’s story.",
+      title: "Book Publicity & PR Services",
+      description: "Media outreach, interviews and features that get your book talked about.",
     },
     hero: {
-      badge: "Educational Materials",
-      title: "Learning Built *Around Your Story*",
-      description: "Worksheets, activity books and lesson plans that help teachers and parents use your book to teach.",
+      badge: "Book Publicity",
+      title: "Get Your Book *Talked About*",
+      description: "We pitch you and your book to podcasts, blogs, newspapers and TV, so readers hear about it from trusted voices.",
     },
-    about: {
-      badge: "About This Service",
-      title: "Your Book *in the Classroom*",
-      description: [
-        "Activities make your book more useful to teachers and parents, and give kids more time with your characters.",
-        "We create materials that match your book’s age group and themes, designed in the same style as your illustrations.",
+    overview: {
+      title: "*Book Publicity,* Media That Builds Trust",
+      description: "A press mention or podcast interview reaches readers who might never see an ad, and builds your credibility as an author. We find the right outlets and pitch them for you.",
+      points: [
+        "Media kit",
+        "Story angle development",
+        "Podcast pitching",
+        "Blog and review outreach",
+        "Newspaper and magazine pitches",
+        "TV and radio pitches",
+        "Interview preparation",
+        "Coverage reports",
       ],
-      points: ["Teacher guides and lesson plans", "Activity books and coloring pages", "Printable worksheets"],
-      image: "/images/services/educational-materials.png",
+      image: "/image/services/publicity.png",
+      imageAlt: "Author being interviewed",
+      ctaLabel: "Get Media Coverage",
     },
-    portfolio: {
-      title: "Materials *We’ve Created*",
-      description: "Activity books and teaching resources made for children’s books.",
-    },
-    faq: {
-      title: "Educational Materials *Questions*",
-      items: [
-        { question: "Who writes the activities?", answer: "Our team includes writers with teaching experience who match activities to your book’s age group." },
-        { question: "Can I sell the activity book?", answer: "Yes. We can publish it as its own book or offer pages as free downloads." },
-        { question: "Will the materials match my book’s style?", answer: "Yes. We use your characters and illustration style throughout." },
-        { question: "Can these help with school marketing?", answer: "Yes. Teachers are more likely to use books that come with ready-made activities." },
+    process: {
+      title: "From Pitch to *Press Coverage* Step by Step",
+      description: "Targeted outreach that gives your book a story the media wants to tell.",
+      steps: [
+        { icon: "lightbulb", title: "Find Your Angle", text: "We shape the story that makes you and your book newsworthy." },
+        { icon: "megaphone", title: "Pitch the Media", text: "We contact podcasts, blogs, press and broadcasters that fit your book." },
+        { icon: "mic", title: "Book Interviews", text: "We schedule interviews and prepare you with talking points." },
       ],
     },
   },
 
-  "character-licensing": {
-    name: "Character Licensing",
-    category: "Character Branding",
+  "press-releases": {
+    name: "Press Releases",
+    category: "Marketing & Publicity",
     seo: {
-      title: "Children’s Book Character Licensing",
-      description: "Turn your children’s book characters into a brand with licensing deals for toys, media and products.",
+      title: "Book Press Release Writing & Distribution",
+      description: "Professionally written press releases sent to news outlets and media networks.",
     },
     hero: {
-      badge: "Character Licensing",
-      title: "Grow Your Characters *Beyond the Book*",
-      description: "We help you turn your characters into a brand with licensing deals for toys, media and products.",
+      badge: "Press Releases",
+      title: "Announce Your Book *Like a Pro*",
+      description: "We write a newsworthy press release about your book and send it to news sites, journalists and media networks.",
     },
-    about: {
-      badge: "About This Service",
-      title: "Your Characters, *Your Brand*",
-      description: [
-        "Licensing lets other companies use your characters on their products while you earn a share of the sales. It’s how beloved book characters end up on toys, shows and clothing.",
-        "We prepare your characters for licensing, put together a pitch package and help you approach companies that fit your brand.",
+    overview: {
+      title: "*Press Releases,* Announce Your Book Like a Pro",
+      description: "A good press release gives journalists a ready-made story about why your book matters now. We write it, get your approval and send it to the outlets most likely to care.",
+      points: [
+        "Newsworthy angle",
+        "Professional writing",
+        "Quotes and author bio",
+        "Newswire distribution",
+        "Targeted journalist outreach",
+        "Search-friendly copy",
+        "Your approval first",
+        "Pickup report",
       ],
-      points: ["Licensing-ready character guide", "Pitch package for brands and studios", "Help reviewing deal terms"],
-      image: "/images/services/licensing.png",
+      image: "/image/services/press-releases.png",
+      imageAlt: "Book press release",
+      ctaLabel: "Write My Release",
     },
-    portfolio: {
-      title: "Characters *Ready to License*",
-      description: "Character brands we’ve prepared for licensing.",
+    process: {
+      title: "From Announcement to *Media Pickup* Step by Step",
+      description: "Your book news, written the way the media expects.",
+      steps: [
+        { icon: "lightbulb", title: "Find the News Angle", text: "We identify what makes your launch, award or milestone newsworthy." },
+        { icon: "pen", title: "Write the Release", text: "We write a clear, professional release and send it for your approval." },
+        { icon: "megaphone", title: "Distribute and Report", text: "We send it out and share a report showing where it was picked up." },
+      ],
     },
-    faq: {
-      title: "Licensing *Questions*",
-      items: [
-        { question: "Are my characters ready for licensing?", answer: "Characters with a strong look and an audience do best. We’ll review yours and suggest next steps." },
-        { question: "Do I keep ownership of my characters?", answer: "Yes. Licensing gives others permission to use them. You stay the owner." },
-        { question: "How do I earn from licensing?", answer: "Usually through a royalty, a percentage of sales on licensed products." },
-        { question: "Do you provide legal advice?", answer: "No. We help you understand deal terms, but you should have a lawyer review any contract." },
+  },
+
+  /* ---------------------------------------------------------------- */
+  /*  VIDEO & AUDIO                                                   */
+  /* ---------------------------------------------------------------- */
+  "book-trailers": {
+    name: "Book Trailers",
+    category: "Video & Audio",
+    seo: {
+      title: "Book Trailer Video Services",
+      description: "Short, cinematic videos that tease your book on social media, YouTube and Amazon.",
+    },
+    hero: {
+      badge: "Book Trailers",
+      title: "A Trailer That *Sells the Story*",
+      description: "Short, eye-catching videos that tease your book and get readers clicking on social media, YouTube and Amazon.",
+    },
+    overview: {
+      title: "*Book Trailers,* Sell the Story in Seconds",
+      description: "A book trailer shows readers what your story feels like before they buy. We script, produce and edit it, then deliver versions sized for every platform you use.",
+      points: [
+        "Script writing",
+        "Cinematic or animated styles",
+        "Music and sound design",
+        "Professional voiceover",
+        "Title animation",
+        "Amazon-ready version",
+        "Social media cuts",
+        "YouTube version",
+      ],
+      image: "/image/services/book-trailers.png",
+      imageAlt: "Book trailer video frames",
+      ctaLabel: "Create My Trailer",
+    },
+    process: {
+      title: "From Script to *Finished Trailer* Step by Step",
+      description: "A short video that captures the feeling of your book.",
+      steps: [
+        { icon: "pen", title: "Write the Script", text: "We write a script from your book and send it for approval." },
+        { icon: "video", title: "Produce the Trailer", text: "We create visuals, music and voiceover in the style you choose." },
+        { icon: "rocket", title: "Deliver Every Format", text: "You get versions for Amazon, YouTube, reels and stories." },
+      ],
+    },
+  },
+
+  "2d-animation": {
+    name: "2D Animation",
+    category: "Video & Audio",
+    seo: {
+      title: "2D Animation Services for Authors",
+      description: "Smooth, colorful 2D animation that brings your book’s characters and stories to life.",
+    },
+    hero: {
+      badge: "2D Animation",
+      title: "Watch Your Characters *Come Alive*",
+      description: "We animate your characters and stories in smooth, colorful 2D, ready for YouTube, social media and your website.",
+    },
+    overview: {
+      title: "*2D Animation,* From Page to Screen",
+      description: "Readers, especially kids, meet stories on screens as often as on paper. We animate your characters from your existing illustrations, so they look exactly like the ones in your book.",
+      points: [
+        "Character animation",
+        "Animated story videos",
+        "Built from your illustrations",
+        "Storyboarding",
+        "Voiceover",
+        "Music and sound effects",
+        "Social media clips",
+        "YouTube-ready videos",
+      ],
+      image: "/image/services/2d-animation.png",
+      imageAlt: "Animated book characters",
+      ctaLabel: "Animate My Story",
+    },
+    process: {
+      title: "From Storyboard to *Animated Story* Step by Step",
+      description: "Your characters, moving and talking just as readers imagined.",
+      steps: [
+        { icon: "clipboard", title: "Storyboard", text: "We plan every scene and send the storyboard for your approval." },
+        { icon: "video", title: "Animate", text: "Our animators bring each scene to life in smooth 2D." },
+        { icon: "mic", title: "Voice and Sound", text: "We add voiceover, music and sound effects, then deliver the final video." },
+      ],
+    },
+  },
+
+  "motion-graphics": {
+    name: "Motion Graphics",
+    category: "Video & Audio",
+    seo: {
+      title: "Motion Graphics for Books & Authors",
+      description: "Animated text, quotes and graphics that make your book content stand out online.",
+    },
+    hero: {
+      badge: "Motion Graphics",
+      title: "Make Your Content *Move*",
+      description: "Animated quotes, text, logos and graphics that make your book’s ideas pop on social media and video.",
+    },
+    overview: {
+      title: "*Motion Graphics,* Content That Stops the Scroll",
+      description: "Moving visuals catch the eye far more than static images. We turn your quotes, stats and key ideas into short, shareable clips in your brand colors and fonts.",
+      points: [
+        "Animated quotes",
+        "Text animations",
+        "Logo animations",
+        "Title sequences",
+        "Explainer graphics",
+        "Social media clips",
+        "Ad creatives",
+        "Brand-matched templates",
+      ],
+      image: "/image/services/motion-graphics.png",
+      imageAlt: "Motion graphics frames",
+      ctaLabel: "Create Motion Graphics",
+    },
+    process: {
+      title: "From Idea to *Moving Visuals* Step by Step",
+      description: "Short, branded clips made for the platforms your readers use.",
+      steps: [
+        { icon: "lightbulb", title: "Pick the Message", text: "We choose the quotes, ideas or stats that will hook your readers." },
+        { icon: "palette", title: "Design and Animate", text: "We design in your brand style and bring it to life with motion." },
+        { icon: "check", title: "Review and Deliver", text: "You review the clips and get files sized for each platform." },
+      ],
+    },
+  },
+
+  "promotional-videos": {
+    name: "Promotional Videos",
+    category: "Video & Audio",
+    seo: {
+      title: "Promotional Videos for Authors & Books",
+      description: "Ads, author introductions and promo clips that help sell your book and build your platform.",
+    },
+    hero: {
+      badge: "Promotional Videos",
+      title: "Videos That *Sell Your Book*",
+      description: "Video ads, author introductions and promo clips that build interest in your book and your work.",
+    },
+    overview: {
+      title: "*Promotional Videos,* Put a Face to Your Book",
+      description: "Readers connect with authors they can see and hear. We plan, script and produce videos for ads, your website, crowdfunding pages and social media.",
+      points: [
+        "Video ads",
+        "Author introductions",
+        "Book announcements",
+        "Crowdfunding videos",
+        "Website videos",
+        "Remote filming guidance",
+        "Stock footage and animation",
+        "Ad-ready formats",
+      ],
+      image: "/image/services/promotional-videos.png",
+      imageAlt: "Author promotional video",
+      ctaLabel: "Make My Promo Video",
+    },
+    process: {
+      title: "From Concept to *Promo Video* Step by Step",
+      description: "Professional video, whether you appear on camera or not.",
+      steps: [
+        { icon: "lightbulb", title: "Plan the Concept", text: "We agree on the goal, message and style of your video." },
+        { icon: "video", title: "Film or Create", text: "You record at home with our guidance, or we build it from footage and animation." },
+        { icon: "rocket", title: "Edit and Deliver", text: "We edit the video and deliver versions for every platform." },
+      ],
+    },
+  },
+
+  "video-editing": {
+    name: "Video Editing",
+    category: "Video & Audio",
+    seo: {
+      title: "Video Editing Services for Authors",
+      description: "Professional editing for interviews, readings, vlogs and social clips.",
+    },
+    hero: {
+      badge: "Video Editing",
+      title: "Raw Footage to *Polished Video*",
+      description: "Send us your footage and we’ll turn it into polished interviews, readings, vlogs and social clips.",
+    },
+    overview: {
+      title: "*Video Editing,* Your Footage, Professionally Finished",
+      description: "You don’t need a film crew to make great video, you need good editing. We cut, color, caption and add music, and turn long videos into short clips for social media.",
+      points: [
+        "Cutting and pacing",
+        "Color correction",
+        "Audio cleanup",
+        "Captions and subtitles",
+        "Titles and graphics",
+        "Royalty-free music",
+        "Short clips from long videos",
+        "Two revision rounds",
+      ],
+      image: "/image/services/video-editing.png",
+      imageAlt: "Video editing timeline",
+      ctaLabel: "Edit My Video",
+    },
+    process: {
+      title: "From Raw Footage to *Final Cut* Step by Step",
+      description: "Simple to send, quick to turn around, ready to post.",
+      steps: [
+        { icon: "file", title: "Upload Your Footage", text: "Share your files through Google Drive or Dropbox with any notes." },
+        { icon: "video", title: "Edit and Enhance", text: "We cut, color, clean up audio and add captions and music." },
+        { icon: "check", title: "Review and Deliver", text: "You review the edit, request changes and get the final files." },
+      ],
+    },
+  },
+
+  "audiobook-production": {
+    name: "Audiobook Production",
+    category: "Video & Audio",
+    seo: {
+      title: "Audiobook Production Services",
+      description: "Professional narration, editing and mastering for audiobooks ready for Audible, Apple and Spotify.",
+    },
+    hero: {
+      badge: "Audiobook Production",
+      title: "A Story That *Sounds as Good as It Reads*",
+      description: "Professional narrators, editing and mastering that bring your book to life for listeners at home, in the car or on the go.",
+    },
+    overview: {
+      title: "*Audiobook Production,* Books Made for Listening",
+      description: "Audiobooks let your story reach listeners wherever they are. You choose the narrator, and we handle recording, editing and mastering to the standards every major platform requires.",
+      points: [
+        "Narrator auditions",
+        "Author narration coaching",
+        "Studio recording",
+        "Editing and mastering",
+        "Music and sound effects",
+        "Audible-ready files",
+        "Apple and Spotify files",
+        "Retail sample clip",
+      ],
+      image: "/image/services/audiobooks.png",
+      imageAlt: "Audiobook recording studio",
+      ctaLabel: "Produce My Audiobook",
+    },
+    process: {
+      title: "From Text to *Finished Audiobook* Step by Step",
+      description: "A professional audiobook, ready to sell on every major platform.",
+      steps: [
+        { icon: "message", title: "Hear Auditions", text: "Listen to narrators reading your book and pick the voice you love." },
+        { icon: "mic", title: "Record the Book", text: "Your narrator records in a professional studio, chapter by chapter." },
+        { icon: "check", title: "Master and Deliver", text: "We edit and master the audio to platform specs and deliver final files." },
       ],
     },
   },

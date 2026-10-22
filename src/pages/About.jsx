@@ -1,9 +1,11 @@
 import React from 'react'
 import Hero from '../components/Sharedsections/Hero'
-import WhoWeAre from '../components/about/Whoweare'
-import WhyChooseUs from '../components/about/Whychooseus'
-import MissionVision from '../components/about/Missionvision'
-import ProcessSteps from '../components/home/ProcessSteps'
+import BookWriting from '../components/about/BookWriting'
+import SupportCTA from '../components/home/Supportcta'
+import ProcessSteps from '../components/about/ProcessSteps'
+import PlatformLogos from '../components/Sharedsections/PlatformLogos'
+import Testimonials from '../components/Sharedsections/Testimonials'
+
 
 const About = () => {
   return (
@@ -11,16 +13,19 @@ const About = () => {
       <Hero
         variant="page"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About Us" }]}
-        badge="Children’s Book Writing & Publishing"
-        title={<>We Bring Children’s <span className="font-medium">Stories</span> to Life</>}
-        description="We help aspiring authors and storytellers turn their ideas into beautifully written and professionally published children’s books."
+        title={<>Your   <span className="font-medium">Story Deserves</span><br/> to Be Told </>}
+        description="Empowering authors to share their unique stories with the world. At Author House Inc, we combine publishing expertise, creative design, and comprehensive marketing strategies to transform manuscript drafts into bestsellers. Dedicated to excellence, transparency, and author success, we are your trusted publishing partner at every step. "
         formTitle = "Send us a message"
         formDescription = "end us a messag"
       />
-      <WhoWeAre/>
-      <WhyChooseUs/>
-      <MissionVision/>
+      <BookWriting/>
+      <SupportCTA variant="stats" />
       <ProcessSteps/>
+      <PlatformLogos/>
+      <Testimonials/>
+
+
+
     </div>
   )
 }

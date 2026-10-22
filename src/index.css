@@ -119,4 +119,80 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
   );
 }
 
+.glass3 {
+  position: relative;
+  overflow: hidden; /* Contains the surface reflection shine */
+  
+  /* Semi-translucent dark glass base for rich contrast */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
 
+  /* Deep blur + high saturation for vivid background refraction */
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+
+  /* Ultra-subtle outer border ring */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  /* Realistic depth: multi-layered inner light reflections & realistic drop shadow */
+  box-shadow:
+    /* Top edge rim glare */
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.35),
+    /* Subtle inner corner highlight */
+    inset 1px 0 2px 0 rgba(255, 255, 255, 0.15),
+    /* Soft ambient bottom shadow (adds thickness) */
+    inset 0 -2px 6px 0 rgba(0, 0, 0, 0.4),
+    /* Outer drop shadow for physical elevation */
+    0 20px 50px rgba(0, 0, 0, 0.45);
+
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Gradient Border Mask (Simulates Glass Edge Bevel) */
+.glass3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.15) 35%,
+    rgba(255, 255, 255, 0.02) 65%,
+    rgba(255, 255, 255, 0.25) 100%
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Diagonal Surface Reflection Flare */
+.glass3::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  
+  background: radial-gradient(
+    circle at 30% 20%,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.02) 40%,
+    transparent 70%
+  );
+
+  pointer-events: none;
+  z-index: 1;
+}

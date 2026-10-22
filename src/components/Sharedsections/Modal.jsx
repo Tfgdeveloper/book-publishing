@@ -1,7 +1,7 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Clock, X } from "lucide-react";
-import ContactForm from "./ContactForm";
+import ModalForm from "../../forms/ModalForm";
 
 const GRADIENT = "linear-gradient(135deg, #E2770B 0%, #EF1A07 35%, #EF1A07 100%)";
 const ease = [0.22, 1, 0.36, 1];
@@ -65,7 +65,7 @@ const Modal = ({
                       initial={reduce ? false : { opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.15, duration: 0.4, ease }}
-                      className="glass relative inline-flex items-center   px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-white ring-1 ring-white/30"
+                      className="glass relative inline-flex items-center rounded-full  px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-white ring-1 ring-white/30"
                     >
                       {eyebrow}
                     </motion.span>
@@ -95,13 +95,9 @@ const Modal = ({
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.25, duration: 0.5, ease }}
                   >
-                    <ContactForm
-                      className="max-w-xl space-y-10"
-                      formClassName="rounded-2xl"
-                      inputClassName="[&_input]:h-9 [&_input]:rounded-lg [&_input]:border [&_input]:border-neutral-200 [&_input]:bg-[#F4F4F6] [&_input]:transition-colors [&_input:focus]:border-[#EF1A07] [&_input:focus]:bg-white [&_textarea]:min-h-0 [&_textarea]:h-20 [&_textarea]:resize-none [&_textarea]:rounded-lg [&_textarea]:border [&_textarea]:border-neutral-200 [&_textarea]:bg-[#F4F4F6] [&_textarea]:transition-colors [&_textarea:focus]:border-[#EF1A07] [&_textarea:focus]:bg-white"
-                      buttonClassName="mt-0"
+                    <ModalForm
                       buttonText="Get Started Now"
-                      buttonVarient="glass"
+                      onSuccess={() => onOpenChange?.(false)}
                     />
 
                     <p className="mt-4 flex items-center justify-center gap-2 text-center text-xs text-white">

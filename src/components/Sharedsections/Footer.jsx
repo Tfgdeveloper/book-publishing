@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MapPin, Phone, Mail } from "lucide-react";
 import { Link } from "react-router";
 import PrimaryButton from "../ui/PrimaryButton";
 import Heading from "../ui/Heading";
@@ -17,43 +17,47 @@ const fadeUp = {
 
 const quickLinks = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Blogs", href: "#blogs" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "About Us", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Reviews", href: "/reviews" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 // `external: true` uses a normal <a>, needed for #hash links so the browser scrolls
-const usefulLinks = [
-  { label: "Terms & Conditions", href: "#terms" },
-  { label: "Privacy Policy", href: "#privacy-policy" },
-  { label: "FAQ's", href: "#faq", external: true },
+// Update labels/routes to match your actual service pages
+const services = [
+  { label: "Ghostwriting", href: "/services/ghostwriting" },
+  { label: "Book Editing", href: "/services/book-editing" },
+  { label: "Book Publishing", href: "/services/book-publishing" },
+  { label: "Cover Design", href: "/services/cover-design" },
+  { label: "Book Marketing", href: "/services/book-marketing" },
+  { label: "Audiobook Production", href: "/services/audiobook" },
 ];
 
-/* Brand icons as inline SVG, so they don't depend on a lucide version */
-const socials = [
+const legalLinks = [
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Refund Policy", href: "/refund-policy" },
+];
+
+// Replace with your real details
+const contactInfo = [
   {
-    name: "Facebook",
-    href: "#",
-    path: "M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V9c0-.6.4-1 1-1z",
+    icon: MapPin,
+    label: "1548 S Missouri Ave, Clearwater, FL 33756",
   },
   {
-    name: "Pinterest",
-    href: "#",
-    path: "M12.2 2C6.7 2 4 5.9 4 9.2c0 2 .8 3.8 2.4 4.4.3.1.5 0 .6-.3l.2-1c.1-.3 0-.4-.2-.7-.5-.6-.8-1.3-.8-2.4 0-3.1 2.3-5.8 6-5.8 3.3 0 5.1 2 5.1 4.7 0 3.5-1.6 6.5-3.9 6.5-1.3 0-2.2-1-1.9-2.3.4-1.5 1.1-3.2 1.1-4.3 0-1-.5-1.8-1.6-1.8-1.3 0-2.3 1.3-2.3 3.1 0 1.1.4 1.9.4 1.9l-1.5 6.5c-.4 1.9-.1 4.3 0 4.5 0 .1.2.2.3.1.1-.2 1.7-2.1 2.2-4l.9-3.4c.4.8 1.7 1.6 3.1 1.6 4 0 6.8-3.7 6.8-8.6C20.1 5.6 16.9 2 12.2 2z",
+    icon: Phone,
+    label: "(727) 618-7790",
+    href: "tel:+17276187790",
   },
   {
-    name: "Twitter",
-    href: "#",
-    path: "M22 5.9c-.7.3-1.5.6-2.4.7.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 0 0-7 3.7A11.6 11.6 0 0 1 3.4 4.7a4.1 4.1 0 0 0 1.3 5.5c-.7 0-1.3-.2-1.9-.5 0 2 1.4 3.7 3.3 4.1-.6.2-1.2.2-1.9.1.5 1.6 2 2.8 3.8 2.9A8.3 8.3 0 0 1 2 18.5 11.7 11.7 0 0 0 8.3 20.3c7.5 0 11.7-6.2 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.2z",
-  },
-  {
-    name: "YouTube",
-    href: "#",
-    path: "M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3z",
+    icon: Mail,
+    label: "support@authorhouseinc.com",
+    href: "mailto:support@authorhouseinc.com",
   },
 ];
+
 
 const linkClass =
   "text-sm text-white/60 font-light transition-colors duration-300 hover:text-white focus:outline-none focus-visible:text-white focus-visible:underline";
@@ -77,11 +81,11 @@ export default function Footer() {
       >
         <div>
           <Heading className="font-heading text-3xl leading-tight md:text-4xl">
-            <span className="medium">Subscribe</span>
-            <span className="regular"> to our list</span>
+            <span className="medium">Ready to Publish </span>
+            <span className="regular"> Your Book?</span>
           </Heading>
-          <p className="mt-3 text-sm font-light text-white/60">
-            Don't wait, make a smart &amp; logical quote here. It's pretty easy.
+          <p className="mt-3 max-w-xl text-sm font-light text-white/60">
+            Turn your publishing dreams into reality with expert book publishing services, professional guidance, and everything you need to bring your story to life.
           </p>
         </div>
         <PrimaryButton openModal>Get Quote Now <ArrowRight/></PrimaryButton>
@@ -105,8 +109,7 @@ export default function Footer() {
             LOGO HERE
           </Link>
           <p className="mt-5 max-w-xs text-sm leading-relaxed font-light text-[#fff]/60">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-            been the industry's standard dummy text ever since 1966.
+            Author House Inc is a premier book publishing agency dedicated to empowering authors worldwide. From professional editing and custom cover design to global distribution and targeted marketing, we provide end-to-end solutions to bring your story to life. 
           </p>
         </motion.div>
 
@@ -124,34 +127,41 @@ export default function Footer() {
           </ul>
         </motion.nav>
 
-        {/* Useful links */}
-        <motion.nav variants={fadeUp} aria-label="Useful links">
-          <ColumnHeading>Useful Links</ColumnHeading>
-          <ul className="space-y-3">
-            {usefulLinks.map((l) => (
-              <li key={l.label}>
-                {l.external ? (
-                  <a href={l.href} className={linkClass}>
-                    {l.label}
-                  </a>
-                ) : (
-                  <Link to={l.href} className={linkClass}>
-                    {l.label}
-                  </Link>
-                )}
+       {/* Services */}
+        <motion.nav variants={fadeUp} aria-label="Services" >
+          <ColumnHeading>Services</ColumnHeading>
+          <ul className="space-y-4">
+            {services.map((s) => (
+              <li key={s.label}>
+                <Link to={s.href} className={linkClass}>
+                  {s.label}
+                </Link>
               </li>
             ))}
           </ul>
         </motion.nav>
 
         {/* About */}
-        <motion.div variants={fadeUp}>
-          <ColumnHeading>About Us</ColumnHeading>
-          <p className="text-sm leading-relaxed text-neutral-400">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-            been the industry's standard dummy text ever since 1966.
-          </p>
-        </motion.div>
+        {/* Contact */}
+          <motion.div variants={fadeUp}>
+            <ColumnHeading>Get In Touch</ColumnHeading>
+            <ul className="space-y-4">
+              {contactInfo.map(({ icon: Icon, label, href }) => (
+                <li key={label} className="flex items-start gap-3">
+                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-gradient-to-br from-[#E2770B] to-[#EF1A07]">
+                    <Icon className="h-4 w-4 text-white" />
+                  </span>
+                  {href ? (
+                    <a href={href} className={`${linkClass} pt-1.5`}>
+                      {label}
+                    </a>
+                  ) : (
+                    <span className="pt-1.5 text-sm font-light leading-relaxed text-white/60">{label}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
       </motion.div>
 
       {/* Disclaimer (kept from your old footer; delete this block if you don't need it) */}
@@ -174,21 +184,15 @@ export default function Footer() {
         >
           <p className="text-sm text-neutral-300">Copyright © {year}. All Rights Reserved.</p>
 
-          <ul className="flex items-center gap-3">
-            {socials.map((s) => (
-              <li key={s.name}>
-                <a
-                  href={s.href}
-                  aria-label={s.name}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-md text-white transition-all duration-300 hover:-translate-y-0.5 hover:[box-shadow:var(--glow)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
-                  style={{ background: GRADIENT, "--glow": GLOW }}
+          <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            {legalLinks.map((l) => (
+              <li key={l.label}>
+                <Link
+                  to={l.href}
+                  className="text-sm text-neutral-300 transition-colors duration-300 hover:text-white focus:outline-none focus-visible:text-white focus-visible:underline"
                 >
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
-                    <path d={s.path} fillRule="evenodd" />
-                  </svg>
-                </a>
+                  {l.label}
+                </Link>
               </li>
             ))}
           </ul>

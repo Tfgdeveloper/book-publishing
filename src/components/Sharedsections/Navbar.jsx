@@ -44,7 +44,7 @@ const Navbar = ({
 
   const linkClass = (isActive) =>
     `font-body font-medium transition-colors duration-200 focus:outline-none focus-visible:underline ${
-      isActive ? " font-semibold text-[#fff]" : "text-white hover:text-[#fff]"
+      isActive ? " font-semibold text-[#fff] hover:text-[#EF1A07]" : "text-white hover:text-[#EF1A07]"
     }`;
 
   return (
@@ -61,7 +61,7 @@ const Navbar = ({
           <Link
             to={logoHref}
             onClick={closeMenu}
-            className="font-heading regular text-xl font-bold text-white sm:text-2xl"
+            className="font-heading regular text-xl font-bold text-white sm:text-2xl "
           >
            {logo}
           </Link>
@@ -133,7 +133,7 @@ const Navbar = ({
               role="dialog"
               aria-modal="true"
               aria-label="Menu"
-              className="absolute right-0 top-0 flex h-full w-full max-w-sm flex-col overflow-y-auto bg-[#FAEDDD] px-6 pb-8 shadow-2xl"
+              className="absolute right-0 top-0 flex h-full w-full max-w-sm flex-col overflow-y-auto bg-white px-6 pb-8 shadow-2xl"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}

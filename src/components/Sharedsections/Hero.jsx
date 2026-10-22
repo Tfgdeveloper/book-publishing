@@ -2,13 +2,14 @@ import { ChevronRight, ArrowUpRight, Phone, CalendarClock } from "lucide-react";
 import { motion } from "framer-motion";
 import PrimaryButton from "../ui/PrimaryButton";
 import SecondaryButton from "../ui/SecondaryButton";
-import ContactForm from "./ContactForm";
 import LightRays from "../ui/LightRays";
 import Heading from "../ui/Heading";
+import ModalForm from "../../forms/ModalForm";
+import HeroForm from "../../forms/HeroForm";
 
 const GRADIENT = "linear-gradient(135deg, #E2770B 0%, #EF1A07 35%, #EF1A07 100%)";
 const GRADIENT_BG = "bg-[linear-gradient(135deg,#E2770B_0%,#EF1A07_35%,#EF1A07_100%)]";
-const PHONE = "+123 - 234 - 1234";
+const PHONE = "(727) 618-7790";
 
 /* ------------------------------------------------------------------ */
 /*  Shared animation settings — every entrance runs once, in view      */
@@ -64,7 +65,7 @@ function StarIcon() {
   );
 }
 
-function Rating({ score = "4.8/5.0", reviews = "2000", className = "" }) {
+function Rating({ score = "4.8/5.0", reviews = "2000+", className = "" }) {
   return (
     <motion.p
       variants={fadeUp}
@@ -76,7 +77,7 @@ function Rating({ score = "4.8/5.0", reviews = "2000", className = "" }) {
           <StarIcon key={i} />
         ))}
       </span>
-      <span className="text-white/70">based on {reviews} reviews</span>
+      <span className="text-white/70">based on {reviews} Satsisfied Authors</span>
     </motion.p>
   );
 }
@@ -96,7 +97,7 @@ function Badge({ children }) {
 function Breadcrumbs({ items = [], className = "" }) {
   if (!items.length) return null;
   return (
-    <motion.nav variants={fadeUp} aria-label="Breadcrumb" className={className}>
+    <motion.nav variants={fadeUp} aria-label="Breadcrumb" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.15em] text-white/80 backdrop-blur">
       <ol className="flex flex-wrap items-center gap-1.5 text-sm text-white/55">
         {items.map((item, i) => {
           const last = i === items.length - 1;
@@ -139,21 +140,20 @@ function HomeHero() {
           >
             <Heading 
               as="h1"
-              title={<>Turning Your Words Into <br/> <span className="font-medium md:text-[72px]">Published Masterpieces.</span> </>}
+              title={<>Transforming Your Concepts into  <br/> <span className="font-medium md:text-[72px]">Literary Masterpieces.</span> </>}
               className="regular mt-5 text-[32px] leading-[1.1] text-white md:text-[48px]">
             </Heading>
 
             <motion.p variants={fadeUp} className="mx-auto mt-4 max-w-4xl text-center text-[16px] font-thin text-white">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-              been the industry's standard dummy text ever since the make a type specimen book.
+              Bring your manuscript to life with industry-leading publishing solutions. At Author House Inc, we empower writers by turning ideas into professionally edited, beautifully designed, and globally distributed books. From initial draft refinement to full-scale promotion, we handle every detail so your story makes a lasting impact. 
             </motion.p>
 
             <motion.div
               variants={fadeUp}
               className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap"
             >
-              <PrimaryButton openModal className="px-[32px] py-[16px]">Start Your Story</PrimaryButton>
-              <SecondaryButton className="px-[20px] py-[8px]">{PHONE}</SecondaryButton>
+              <PrimaryButton openModal className="px-[32px] py-[16px]">Claim Your Free Quote</PrimaryButton>
+              <SecondaryButton className="px-[20px] py-[8px]" href="tel:+17276187790">Speak With a Publishing Expert</SecondaryButton>
             </motion.div>
 
             <Rating className="mt-8 justify-center" />
@@ -191,7 +191,6 @@ function PageHero({
   titleHighlight,
   description,
   breadcrumbs = [],
-  highlights = DEFAULT_HIGHLIGHTS,
   phone = PHONE,
   formTitle = "Get a Free Consultation",
   formDescription = "Share a few details and we'll get back to you within 24 hours.",
@@ -205,11 +204,11 @@ function PageHero({
         {/* ---------- Content ---------- */}
         <motion.div variants={container} initial="hidden" whileInView="visible" viewport={viewport}>
           <Breadcrumbs items={breadcrumbs} className="mb-6" />
-          {badge && <Badge>{badge}</Badge>}
+          
 
           <motion.h1
             variants={fadeUp}
-            className="mt-6 max-w-3xl font-heading text-[2.5rem] light leading-[1.05] tracking-tight text-white sm:text-6xl xl:text-7xl"
+            className="mt-6 max-w-3xl font-heading text-[2.5rem] light leading-[1.05] tracking-tight text-white sm:text-6xl xl:text-6xl"
           >
             {title}
             {titleHighlight && (
@@ -235,20 +234,7 @@ function PageHero({
             </SecondaryButton>
           </motion.div>
 
-          {highlights?.length > 0 && (
-            <motion.dl
-              variants={fadeUp}
-              className="mt-12 grid max-w-lg grid-cols-3 divide-x divide-white/10 border-t border-white/10 pt-6"
-            >
-              {highlights.map((h) => (
-                <div key={h.label} className="px-4 first:pl-0">
-                  <dt className="sr-only">{h.label}</dt>
-                  <dd className="font-heading text-2xl text-white sm:text-3xl">{h.value}</dd>
-                  <dd className="mt-1 text-xs text-light text-white/55 sm:text-sm">{h.label}</dd>
-                </div>
-              ))}
-            </motion.dl>
-          )}
+          
         </motion.div>
 
         {/* ---------- Form card ---------- */}
@@ -262,27 +248,23 @@ function PageHero({
           {/* Gradient glow behind the card */}
 
 
-          <div className="relative overflow-hidden rounded-3xl glass p-6 shadow-2xl sm:p-8">
+          <div className="relative overflow-hidden rounded-3xl glass3   p-6 shadow-2xl sm:p-8">
             {/* Gradient top accent */}
            
 
             <div className="flex items-start justify-between gap-4">
               <div>
-                <h2 className="font-heading text-2xl leading-tight text-[#fff]">{formTitle}</h2>
-                <p className="mt-1.5 text-sm text-neutral-500">{formDescription}</p>
+                <h2 className="font-heading text-3xl leading-tight text-[#fff]">{formTitle}</h2>
+                <p className="mt-1.5 text-sm text-white mb-6">{formDescription}</p>
+                <HeroForm
+                  buttonText="Get Started Now"
+                  onSuccess={() => onOpenChange?.(false)}
+                />
               </div>
             </div>
 
             <div className="mt-6">
-              <ContactForm
-                showConsent
-                termsUrl="/terms-and-conditions"
-                privacyUrl="/privacy-policy"
-                formClassName="[&_a]:text-[#fff] [&_input[type=checkbox]]:accent-[#fff]"
-                inputClassName="[&_input]:h-12 [&_input]:w-full [&_input]:rounded-xl [&_input]:border [&_input]:border-neutral-200/20 [&_input]:bg-[#F4F4F6]/10 [&_input]:px-4 [&_input]:text-sm [&_input]:text-[#fff] [&_input]:outline-none [&_input]:transition-colors [&_input:focus]:border-[#EF1A07] [&_input:focus]:bg-white/20"
-                textareaClassName="h-28 rounded-xl border border-neutral-200/20 bg-[#F4F4F6]/10 text-[#fff] outline-none transition-colors focus:border-[#EF1A07] focus:bg-white/20"
-                buttonClassName={`mt-1 h-12 w-full rounded-xl text-sm font-semibold text-white ${GRADIENT_BG} transition hover:shadow-[0_10px_25px_rgba(239,26,7,0.35)]`}
-              />
+              
             </div>
           </div>
         </motion.div>
@@ -296,7 +278,8 @@ function PageHero({
 /* ------------------------------------------------------------------ */
 function LegalHero({ badge, title, description, breadcrumbs = [], lastUpdated }) {
   return (
-    <div className="relative overflow-clip rounded-b-[30px] bg-black">
+     <div className="relative overflow-clip rounded-b-[30px] bg-black">
+      <Rays dotCount={40} />
       
 
       <motion.section
@@ -306,8 +289,11 @@ function LegalHero({ badge, title, description, breadcrumbs = [], lastUpdated })
         viewport={viewport}
         className="relative z-10 mx-auto w-full max-w-[1600px] px-5 pb-16 pt-32 sm:px-6 md:px-12 lg:px-16 lg:pb-20 lg:pt-40"
       >
-        <Breadcrumbs items={breadcrumbs} className="mb-6" />
-        {badge && <Badge>{badge}</Badge>}
+        
+        <div className="flex flex-col justify center items-center text-center">
+          
+        
+       <Breadcrumbs items={breadcrumbs} className="mb-6" />
 
         <motion.h1
           variants={fadeUp}
@@ -321,26 +307,17 @@ function LegalHero({ badge, title, description, breadcrumbs = [], lastUpdated })
             {description}
           </motion.p>
         )}
+        <motion.div variants={fadeUp} className="mt-9 flex flex-wrap items-center gap-4">
+            <PrimaryButton openModal className="px-[32px] py-[16px]">
+              Start Your Story
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </PrimaryButton>
+          
+          </motion.div>
+          
+        </div>
+        
 
-        {lastUpdated && (
-          <motion.p
-            variants={fadeUp}
-            className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/75 sm:text-sm"
-          >
-            <CalendarClock className="h-4 w-4 text-[#EF1A07]" aria-hidden="true" />
-            Last updated: {lastUpdated}
-          </motion.p>
-        )}
-
-        {/* Thin gradient line to close the header */}
-        <motion.span
-          aria-hidden="true"
-          className={`mt-12 block h-px w-full origin-left ${GRADIENT_BG}`}
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.2, ease, delay: 0.4 }}
-        />
       </motion.section>
     </div>
   );
