@@ -47,8 +47,8 @@ const PrimaryButton = ({
 
   const variantClasses = {
     primary: `
-      bg-[linear-gradient(90deg,#E2770B_0%,#EF1A07_35%,#EF1A07_100%)]
-      hover:shadow-[0_10px_25px_rgba(239,26,7,0.3),0_4px_12px_rgba(226,119,11,0.25)]
+      bg-[linear-gradient(90deg,#B0197E_0%,#310D89_100%)]
+      hover:shadow-[0_10px_25px_rgba(176,25,126,0.3),0_4px_12px_rgba(49,13,137,0.25)]
     `,
     glass: `
       glass

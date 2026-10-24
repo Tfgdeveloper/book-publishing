@@ -36,7 +36,7 @@ function linkifyEmail(text) {
   const parts = String(text).split(/([\w.+-]+@[\w-]+\.[\w.]+)/g);
   return parts.map((part, i) =>
     i % 2 ? (
-      <a key={i} href={`mailto:${part}`} className="text-[#EF1A07] underline-offset-2 hover:underline">
+      <a key={i} href={`mailto:${part}`} className="text-[#B0197E] underline-offset-2 hover:underline">
         {part}
       </a>
     ) : (
@@ -69,7 +69,7 @@ function Block({ block }) {
               {/* small red play-style bullet, same as the service pages */}
               <span
                 aria-hidden="true"
-                className="mt-[10px] h-0 w-0 shrink-0 border-y-[5px] border-l-[7px] border-y-transparent border-l-[#EF1A07] md:mt-[11px]"
+                className="mt-[10px] h-0 w-0 shrink-0 border-y-[5px] border-l-[7px] border-y-transparent border-l-[#B0197E] md:mt-[11px]"
               />
               <span>{linkifyEmail(item)}</span>
             </li>
@@ -112,13 +112,13 @@ function Block({ block }) {
           <p>{CONTACT.address}</p>
           <p>
             Phone:{" "}
-            <a href={toTelHref(CONTACT.phone)} className="text-[#EF1A07] underline-offset-2 hover:underline">
+            <a href={toTelHref(CONTACT.phone)} className="text-[#B0197E] underline-offset-2 hover:underline">
               {CONTACT.phone}
             </a>
           </p>
           <p>
             Email:{" "}
-            <a href={`mailto:${CONTACT.email}`} className="text-[#EF1A07] underline-offset-2 hover:underline">
+            <a href={`mailto:${CONTACT.email}`} className="text-[#B0197E] underline-offset-2 hover:underline">
               {CONTACT.email}
             </a>
           </p>
@@ -178,7 +178,7 @@ export default function LegalPage({ slug }) {
                   <li key={s.id}>
                     <a
                       href={`#${s.id}`}
-                      className="-ml-px block border-l-2 border-transparent py-1 pl-4 text-sm text-[#555] transition-colors hover:border-[#EF1A07] hover:text-[#EF1A07] focus-visible:border-[#EF1A07] focus-visible:text-[#EF1A07] focus-visible:outline-none"
+                      className="-ml-px block border-l-2 border-transparent py-1 pl-4 text-sm text-[#555] transition-colors hover:border-[#B0197E] hover:text-[#B0197E] focus-visible:border-[#B0197E] focus-visible:text-[#B0197E] focus-visible:outline-none"
                     >
                       {i + 1}. {s.title}
                     </a>
@@ -208,7 +208,7 @@ export default function LegalPage({ slug }) {
             {sections.map((s, i) => (
               <section key={s.id} id={s.id} className="scroll-mt-28 pt-12">
                 <h2 className="font-heading text-2xl text-[#000] md:text-3xl">
-                  <span className="text-[#EF1A07]">{i + 1}.</span> {s.title}
+                  <span className="text-[#B0197E]">{i + 1}.</span> {s.title}
                 </h2>
                 {s.blocks.map((block, b) => (
                   <Block key={b} block={block} />

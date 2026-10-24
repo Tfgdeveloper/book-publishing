@@ -8,7 +8,7 @@ function Field({ as = "input", error, className = "", ...props }) {
   const Tag = as;
   const stateClass = error
     ? "border-white ring-2 ring-white/80 bg-red-50"
-    : "border-neutral-200 focus:border-[#EF1A07]";
+    : "border-neutral-200 focus:border-[#B0197E]";
 
   return (
     <div className={className}>
@@ -92,7 +92,7 @@ export default function HeroForm({ onSuccess, buttonText = "Submit" }) {
       <button
         type="submit"
         disabled={loading}
-        className="flex h-11 w-full items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#E2770B_0%,#EF1A07_35%,#EF1A07_100%)] text-sm font-semibold uppercase tracking-wider text-white  transition-all duration-300 hover:bg-white hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-white disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-white/15 disabled:hover:text-white"
+        className="flex h-11 w-full items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#B0197E_0%,#310D89_100%)] text-sm font-semibold uppercase tracking-wider text-white  transition-all duration-300 hover:bg-white hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-white disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-white/15 disabled:hover:text-white"
       >
         {loading ? (
           <>

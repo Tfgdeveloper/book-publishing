@@ -5,7 +5,7 @@ import { Link } from "react-router";
 import Container from "../ui/Container";
 import PrimaryButton from "../ui/PrimaryButton";
 
-const GRADIENT = "linear-gradient(135deg, #E2770B 0%, #EF1A07 35%, #EF1A07 100%)";
+const GRADIENT = "linear-gradient(135deg, #B0197E 0%, #310D89 100%)";
 
 const SERVICES = [
   {
@@ -67,9 +67,9 @@ function CheckIcon() {
       />
       <defs>
         <linearGradient id="servicesCheckGrad" x1="1.19434" y1="-0.697973" x2="22.7404" y2="1.54878" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#E2770B" />
-          <stop offset="0.376384" stopColor="#EF1A07" />
-          <stop offset="1" stopColor="#EF1A07" />
+          <stop stopColor="#B0197E " />
+          
+          <stop offset="1" stopColor="#310D89" />
         </linearGradient>
       </defs>
     </svg>
@@ -86,7 +86,7 @@ function ServiceCard({ service, active, onActivate }) {
       variants={itemVariants}
       onMouseEnter={onActivate}
       onFocus={onActivate}
-      className="relative block overflow-hidden rounded-xl bg-white px-7 py-10 shadow-[0_10px_30px_rgba(0,0,0,0.08)] outline-none transition-shadow duration-500 focus-visible:ring-2 focus-visible:ring-[#EF1A07] focus-visible:ring-offset-2"
+      className="relative block overflow-hidden rounded-xl bg-white px-7 py-10 shadow-[0_10px_30px_rgba(0,0,0,0.08)] outline-none transition-shadow duration-500 focus-visible:ring-2 focus-visible:ring-[#B0197E] focus-visible:ring-offset-2"
       style={{
         boxShadow: active ? "0 10px 25px rgba(239,26,7,0.3), 0 4px 12px rgba(226,119,11,0.25)" : undefined,
       }}
@@ -114,13 +114,13 @@ function ServiceCard({ service, active, onActivate }) {
         {/* Icon in a soft circle that turns white-on-glass when active */}
         <span
           className={`flex h-14 w-14 items-center justify-center rounded-full transition-colors duration-500 ${
-            active ? "bg-white/20" : "bg-[#EF1A07]/10"
+            active ? "bg-white/20" : "bg-[#B0197E]/10"
           }`}
         >
           <Icon
             aria-hidden="true"
             strokeWidth={1.75}
-            className={`h-7 w-7 transition-colors duration-500 ${active ? "text-white" : "text-[#EF1A07]"}`}
+            className={`h-7 w-7 transition-colors duration-500 ${active ? "text-white" : "text-[#B0197E]"}`}
           />
         </span>
 
@@ -142,7 +142,7 @@ function ServiceCard({ service, active, onActivate }) {
 
         <span
           className={`mt-7 inline-flex items-center gap-2 text-sm font-semibold underline underline-offset-4 transition-colors duration-300 ${
-            active ? "text-white" : "text-[#EF1A07]"
+            active ? "text-white" : "text-[#B0197E]"
           }`}
         >
           Learn More

@@ -16,7 +16,7 @@ const BOOKS = [
   { src: "/image/book/08.png", title: "The Manifestos" },
 ];
 
-const GRADIENT = "linear-gradient(135deg, #E2770B 0%, #EF1A07 35%, #EF1A07 100%)";
+const GRADIENT = "linear-gradient(135deg, #B0197E 0%, #310D89 100%)";
 const AUTOPLAY_MS = 3000; // time on each book; set to 0 to turn autoplay off
 const ease = [0.22, 1, 0.36, 1];
 
@@ -92,7 +92,7 @@ function RecentBooks({ books = BOOKS }) {
           if (e.key === "ArrowRight") go(1);
           if (e.key === "ArrowLeft") go(-1);
         }}
-        className="relative mx-auto mt-14 max-w-[1300px] px-4 outline-none focus-visible:ring-2 focus-visible:ring-[#EF1A07]/40"
+        className="relative mx-auto mt-14 max-w-[1300px] px-4 outline-none focus-visible:ring-2 focus-visible:ring-[#B0197E]/40"
       >
         <motion.div
           ref={stageRef}
@@ -155,7 +155,7 @@ function RecentBooks({ books = BOOKS }) {
             type="button"
             onClick={() => go(-1)}
             aria-label="Previous book"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-[#EF1A07]/30 text-[#EF1A07] transition-all duration-300 hover:border-transparent hover:text-white hover:shadow-[0_10px_25px_rgba(239,26,7,0.3)] hover:[background:var(--btn-grad)]"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[#B0197E]/30 text-[#B0197E] transition-all duration-300 hover:border-transparent hover:text-white hover:shadow-[0_10px_25px_rgba(239,26,7,0.3)] hover:[background:var(--btn-grad)]"
             style={{ "--btn-grad": GRADIENT }}
           >
             <ChevronLeft className="h-5 w-5" />
@@ -181,7 +181,7 @@ function RecentBooks({ books = BOOKS }) {
             type="button"
             onClick={() => go(1)}
             aria-label="Next book"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-[#EF1A07]/30 text-[#EF1A07] transition-all duration-300 hover:border-transparent hover:text-white hover:shadow-[0_10px_25px_rgba(239,26,7,0.3)] hover:[background:var(--btn-grad)]"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[#B0197E]/30 text-[#B0197E] transition-all duration-300 hover:border-transparent hover:text-white hover:shadow-[0_10px_25px_rgba(239,26,7,0.3)] hover:[background:var(--btn-grad)]"
             style={{ "--btn-grad": GRADIENT }}
           >
             <ChevronRight className="h-5 w-5" />

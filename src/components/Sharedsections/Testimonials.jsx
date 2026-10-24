@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, Star, ThumbsUp } from "lucide-react";
 import Container from "../ui/Container";
 import Heading from "../ui/Heading";
 
-const GRADIENT = "linear-gradient(135deg, #E2770B 0%, #EF1A07 35%, #EF1A07 100%)";
+const GRADIENT = "linear-gradient(135deg, #B0197E 0%, #310D89 100%)";
 const AUTOPLAY_MS = 5000; // time on each review; 0 turns autoplay off
 const CENTER_OFFSET = "md:translate-y-16"; // how far the centre card sits lower (e.g. md:translate-y-12 / md:translate-y-20)
 const ease = [0.22, 1, 0.36, 1];
@@ -114,7 +114,7 @@ export function ReviewCard({ review, featured }) {
       <div className="relative flex items-center justify-center gap-2 py-4">
         <span
           className={`flex h-6 w-6 items-center justify-center rounded-full transition-colors duration-500 ${
-            featured ? "bg-white text-[#EF1A07]" : "bg-[#151515] text-white"
+            featured ? "bg-white text-[#B0197E]" : "bg-[#151515] text-white"
           }`}
         >
           <ThumbsUp className="h-3 w-3" fill="currentColor" strokeWidth={0} />
@@ -137,7 +137,7 @@ export function ReviewCard({ review, featured }) {
         />
         <Stars count={review.rating} />
         <blockquote className="mt-4 text-sm leading-6 font-light text-[#000]">{review.text}</blockquote>
-        <p className="mt-auto pt-5 text-sm font-semibold text-[#EF1A07]">{review.name}</p>
+        <p className="mt-auto pt-5 text-sm font-semibold text-[#B0197E]">{review.name}</p>
         <p className="mt-0.5 text-xs text-neutral-500">{review.role}</p>
       </div>
     </div>
@@ -260,7 +260,7 @@ function Testimonials({ reviews = REVIEWS }) {
               type="button"
               onClick={() => go(-1)}
               aria-label="Previous review"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#EF1A07]/30 text-[#EF1A07] transition-all duration-300 hover:border-transparent hover:text-white hover:shadow-[0_10px_25px_rgba(239,26,7,0.3)] hover:[background:var(--btn-grad)]"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#B0197E]/30 text-[#B0197E] transition-all duration-300 hover:border-transparent hover:text-white hover:shadow-[0_10px_25px_rgba(239,26,7,0.3)] hover:[background:var(--btn-grad)]"
               style={{ "--btn-grad": GRADIENT }}
             >
               <ChevronLeft className="h-5 w-5" />
@@ -284,7 +284,7 @@ function Testimonials({ reviews = REVIEWS }) {
               type="button"
               onClick={() => go(1)}
               aria-label="Next review"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#EF1A07]/30 text-[#EF1A07] transition-all duration-300 hover:border-transparent hover:text-white hover:shadow-[0_10px_25px_rgba(239,26,7,0.3)] hover:[background:var(--btn-grad)]"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#B0197E]/30 text-[#B0197E] transition-all duration-300 hover:border-transparent hover:text-white hover:shadow-[0_10px_25px_rgba(239,26,7,0.3)] hover:[background:var(--btn-grad)]"
               style={{ "--btn-grad": GRADIENT }}
             >
               <ChevronRight className="h-5 w-5" />

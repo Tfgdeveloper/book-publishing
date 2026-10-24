@@ -12,7 +12,7 @@ const DEFAULT_LABELS = {
 const TEXTAREA_BASE =
   "w-full resize-none px-4 py-3 font-body text-sm transition-all placeholder:text-neutral-400";
 
-const GRADIENT_BG = "bg-[linear-gradient(135deg,#E2770B_0%,#EF1A07_35%,#EF1A07_100%)]";
+const GRADIENT_BG = "bg-[linear-gradient(135deg,#B0197E_0%,#310D89_100%)]";
 
 /* ------------------------------------------------------------------ */
 /*  Variants                                                           */
@@ -92,8 +92,8 @@ const VARIANTS = {
       "[&_textarea]:border [&_textarea]:border-black/15 [&_textarea]:bg-black/10 [&_textarea]:px-3",
       "[&_textarea]:text-sm [&_textarea]:text-black [&_textarea]:placeholder:text-black/45",
       "[&_textarea]:outline-none [&_textarea]:transition-colors",
-      "[&_textarea:focus]:border-[#EF1A07] [&_textarea:focus]:bg-black/15",
-      "[&_input[type=checkbox]]:h-4 [&_input[type=checkbox]]:accent-[#EF1A07]",
+      "[&_textarea:focus]:border-[#B0197E] [&_textarea:focus]:bg-black/15",
+      "[&_input[type=checkbox]]:h-4 [&_input[type=checkbox]]:accent-[#B0197E]",
     ].join(" "),
     wrapper: "grid grid-cols-1 gap-3 md:grid-cols-3",
     fieldWrap: {},
@@ -103,7 +103,7 @@ const VARIANTS = {
       "[&_input]:h-10 [&_input]:w-full [&_input]:rounded-lg [&_input]:border [&_input]:border-black/15",
       "[&_input]:bg-black/10 [&_input]:px-3 [&_input]:text-sm [&_input]:text-black",
       "[&_input]:placeholder:text-black/45 [&_input]:outline-none [&_input]:transition-colors",
-      "[&_input:focus]:border-[#EF1A07] [&_input:focus]:bg-black/15",
+      "[&_input:focus]:border-[#B0197E] [&_input:focus]:bg-black/15",
     ].join(" "),
     textarea: "", // styled by the form classes above
     rows: 3,

@@ -5,7 +5,7 @@ import { useLeadForm } from "../../forms/hooks/useLeadForm";
 
 
 const ease = [0.22, 1, 0.36, 1];
-const GRADIENT_BG = "bg-[linear-gradient(135deg,#E2770B_0%,#EF1A07_35%,#EF1A07_100%)]";
+const GRADIENT_BG = "bg-[linear-gradient(135deg,#B0197E_0%,#310D89_100%)]";
 
 const INTERESTS = [
   "Book Publishing Service",
@@ -33,8 +33,8 @@ function LineField({ label, error, as = "input", ...props }) {
     : "w-full border-b bg-transparent px-2 py-2.5";
 
   const color = error
-    ? "border-[#EF1A07]"
-    : "border-neutral-300 hover:border-neutral-400 focus:border-[#EF1A07]";
+    ? "border-[#B0197E]"
+    : "border-neutral-300 hover:border-neutral-400 focus:border-[#B0197E]";
 
   return (
     <div>
@@ -46,7 +46,7 @@ function LineField({ label, error, as = "input", ...props }) {
         {...props}
       />
       {error && (
-        <p id={`${props.id}-error`} className="mt-1.5 flex items-center gap-1.5 text-xs text-[#EF1A07]">
+        <p id={`${props.id}-error`} className="mt-1.5 flex items-center gap-1.5 text-xs text-[#B0197E]">
           <AlertCircle className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
           {error}
         </p>
@@ -98,11 +98,11 @@ export default function ContactSection() {
                 transition={{ duration: 0.5, ease, delay: 0.3 + i * 0.1 }}
                 className="flex items-center gap-6"
               >
-                <Icon className="h-5 w-5 shrink-0 text-[#EF1A07]" aria-hidden="true" />
+                <Icon className="h-5 w-5 shrink-0 text-[#B0197E]" aria-hidden="true" />
                 {href ? (
                   <a
                     href={href}
-                    className="text-[15px] font-light text-neutral-700 transition-colors duration-300 hover:text-[#EF1A07] focus:outline-none focus-visible:underline"
+                    className="text-[15px] font-light text-neutral-700 transition-colors duration-300 hover:text-[#B0197E] focus:outline-none focus-visible:underline"
                   >
                     {label}
                   </a>
@@ -136,7 +136,7 @@ export default function ContactSection() {
 
             {/* Interests */}
             <fieldset>
-              <legend className="text-sm text-[#EF1A07]">I'm interested in:</legend>
+              <legend className="text-sm text-[#B0197E]">I'm interested in:</legend>
               <div className="mt-3 flex flex-wrap gap-2.5">
                 {INTERESTS.map((item) => {
                   const selected = interests.includes(item);
@@ -146,10 +146,10 @@ export default function ContactSection() {
                       type="button"
                       aria-pressed={selected}
                       onClick={() => toggleInterest(item)}
-                      className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#EF1A07] focus-visible:ring-offset-2 ${
+                      className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B0197E] focus-visible:ring-offset-2 ${
                         selected
                           ? `${GRADIENT_BG} text-white shadow-[0_6px_16px_rgba(239,26,7,0.25)]`
-                          : "border border-neutral-400 text-neutral-600 hover:border-[#EF1A07] hover:text-[#EF1A07]"
+                          : "border border-neutral-400 text-neutral-600 hover:border-[#B0197E] hover:text-[#B0197E]"
                       }`}
                     >
                       {selected && <Check className="h-3.5 w-3.5" aria-hidden="true" />}
@@ -197,7 +197,7 @@ export default function ContactSection() {
             {serverError && (
               <p
                 role="alert"
-                className="flex items-center gap-2 rounded-lg bg-[#EF1A07]/10 px-4 py-3 text-sm text-[#EF1A07]"
+                className="flex items-center gap-2 rounded-lg bg-[#B0197E]/10 px-4 py-3 text-sm text-[#B0197E]"
               >
                 <AlertCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
                 {serverError}
@@ -207,7 +207,7 @@ export default function ContactSection() {
             <button
               type="submit"
               disabled={loading}
-              className={`flex h-12 w-full items-center justify-center gap-2 rounded-full text-sm font-semibold text-white shadow-[0_10px_25px_rgba(239,26,7,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(239,26,7,0.4)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#EF1A07] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 ${GRADIENT_BG}`}
+              className={`flex h-12 w-full items-center justify-center gap-2 rounded-full text-sm font-semibold text-white shadow-[0_10px_25px_rgba(239,26,7,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(239,26,7,0.4)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B0197E] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 ${GRADIENT_BG}`}
             >
               {loading ? (
                 <>

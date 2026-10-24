@@ -7,8 +7,8 @@ import Heading from "../ui/Heading";
 import ModalForm from "../../forms/ModalForm";
 import HeroForm from "../../forms/HeroForm";
 
-const GRADIENT = "linear-gradient(135deg, #E2770B 0%, #EF1A07 35%, #EF1A07 100%)";
-const GRADIENT_BG = "bg-[linear-gradient(135deg,#E2770B_0%,#EF1A07_35%,#EF1A07_100%)]";
+const GRADIENT = "linear-gradient(135deg, #B0197E 0%, #310D89 100%)";
+const GRADIENT_BG = "bg-[linear-gradient(135deg,#B0197E_0%,#310D89_100%)]";
 const PHONE = "(727) 618-7790";
 
 /* ------------------------------------------------------------------ */
@@ -108,7 +108,7 @@ function Breadcrumbs({ items = [], className = "" }) {
                   {item.label}
                 </span>
               ) : (
-                <a href={item.href} className="transition-colors hover:text-[#EF1A07]">
+                <a href={item.href} className="transition-colors hover:text-[#B0197E]">
                   {item.label}
                 </a>
               )}

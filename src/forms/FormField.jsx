@@ -8,7 +8,7 @@ export default function FormField({
 }) {
   const Tag = as;
   const base =
-    "w-full rounded-md border bg-white/5 px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-colors duration-200 focus:border-[#EF1A07]";
+    "w-full rounded-md border bg-white/5 px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-colors duration-200 focus:border-[#B0197E]";
   const borderColor = error ? "border-red-500" : "border-white/15";
 
   return (

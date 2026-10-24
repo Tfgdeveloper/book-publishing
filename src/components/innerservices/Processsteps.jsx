@@ -120,8 +120,8 @@ function IconRings() {
     >
       <defs>
         <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#EF1A07" stopOpacity="1" />
-          <stop offset="100%" stopColor="#EF1A07" stopOpacity="0.5" />
+          <stop offset="0%" stopColor="#B0197E" stopOpacity="1" />
+          <stop offset="100%" stopColor="#B0197E" stopOpacity="0.5" />
         </linearGradient>
       </defs>
       {/* outer arcs */}
@@ -147,7 +147,7 @@ function StepIcon({ icon }) {
   }
 
   const Icon = (typeof icon === "string" ? ICONS[icon] : icon) || Lightbulb;
-  return <Icon size={32} strokeWidth={1.7} aria-hidden="true" className="absolute z-10 text-[#EF1A07]" />;
+  return <Icon size={32} strokeWidth={1.7} aria-hidden="true" className="absolute z-10 text-[#B0197E]" />;
 }
 
 /* Curved arrow between steps, drawn in when it scrolls into view */
@@ -158,8 +158,8 @@ function CurvedArrow({ delay = 0 }) {
     <svg viewBox="0 0 160 40" className="h-10 w-full" fill="none" aria-hidden="true">
       <defs>
         <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="#E2770B" />
-          <stop offset="100%" stopColor="#EF1A07" />
+          <stop offset="0%" stopColor="#310D89" />
+          <stop offset="100%" stopColor="#B0197E" />
         </linearGradient>
       </defs>
       <motion.path
@@ -174,7 +174,7 @@ function CurvedArrow({ delay = 0 }) {
       />
       <motion.path
         d="M138 10 L150 17 L139 26"
-        stroke="#EF1A07"
+        stroke="#B0197E"
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"

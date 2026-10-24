@@ -8,7 +8,7 @@ function Field({ as = "input", error, className = "", ...props }) {
   const Tag = as;
   const stateClass = error
     ? "border-white ring-2 ring-white/80 bg-red-50"
-    : "border-neutral-200 focus:border-[#EF1A07]";
+    : "border-neutral-200 focus:border-[#B0197E]";
 
   return (
     <div className={className}>

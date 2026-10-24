@@ -280,7 +280,7 @@ const TABS = [
 /*  Shared look & settings                                             */
 /* ------------------------------------------------------------------ */
 const ease = [0.22, 1, 0.36, 1];
-const GRADIENT_BG = "bg-[linear-gradient(135deg,#E2770B_0%,#EF1A07_35%,#EF1A07_100%)]";
+const GRADIENT_BG = "bg-[linear-gradient(135deg,#B0197E_0%,#310D89_100%)]";
 const INITIAL_COUNT = 8;
 
 // Vertical offset (px) of each column, giving the staggered look
@@ -324,7 +324,7 @@ function ServiceCard({ service, active, onActivate, delay }) {
         to={service.href}
         onMouseEnter={onActivate}
         onFocus={onActivate}
-        className={`group relative isolate block overflow-hidden rounded-2xl bg-white p-6 outline-none transition-[box-shadow,transform] duration-500 hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-[#EF1A07] focus-visible:ring-offset-2 ${
+        className={`group relative isolate block overflow-hidden rounded-2xl bg-white p-6 outline-none transition-[box-shadow,transform] duration-500 hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-[#B0197E] focus-visible:ring-offset-2 ${
           active
             ? "shadow-none"
             : "shadow-[0px_3px_5px_rgba(0,0,0,0.25)]"
@@ -350,7 +350,7 @@ function ServiceCard({ service, active, onActivate, delay }) {
           <Icon
             aria-hidden="true"
             strokeWidth={1.75}
-            className={`h-8 w-8 transition-colors duration-500 ${active ? "text-white" : "text-[#EF1A07]"}`}
+            className={`h-8 w-8 transition-colors duration-500 ${active ? "text-white" : "text-[#B0197E]"}`}
           />
         )}
 
@@ -372,7 +372,7 @@ function ServiceCard({ service, active, onActivate, delay }) {
 
         <span
           className={`mt-5 inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-500 ${
-            active ? "text-white" : "text-[#EF1A07]"
+            active ? "text-white" : "text-[#B0197E]"
           }`}
         >
           <span className="underline decoration-1 underline-offset-4">Learn More</span>
@@ -456,7 +456,7 @@ export default function ServicesSection() {
                 role="tab"
                 aria-selected={selected}
                 onClick={() => changeTab(t.id)}
-                className={`relative shrink-0 rounded-full px-5 py-2.5 text-sm font-medium outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-[#EF1A07] ${
+                className={`relative shrink-0 rounded-full px-5 py-2.5 text-sm font-medium outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-[#B0197E] ${
                   selected ? "text-white" : "bg-neutral-100 text-neutral-600 hover:text-[#1a1a1a]"
                 }`}
               >
@@ -500,7 +500,7 @@ export default function ServicesSection() {
             <button
               type="button"
               onClick={() => setShowAll((v) => !v)}
-              className={`inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-semibold text-white shadow-[0_10px_25px_rgba(239,26,7,0.3)] transition-transform duration-300 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#EF1A07] focus-visible:ring-offset-2 ${GRADIENT_BG}`}
+              className={`inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-semibold text-white shadow-[0_10px_25px_rgba(239,26,7,0.3)] transition-transform duration-300 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B0197E] focus-visible:ring-offset-2 ${GRADIENT_BG}`}
             >
               {showAll ? "Show Less" : `View All ${filtered.length} Services`}
               <ChevronDown

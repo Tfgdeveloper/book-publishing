@@ -3,7 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Clock, X } from "lucide-react";
 import ModalForm from "../../forms/ModalForm";
 
-const GRADIENT = "linear-gradient(135deg, #E2770B 0%, #EF1A07 35%, #EF1A07 100%)";
+const GRADIENT = "linear-gradient(135deg, #B0197E 0%, #310D89 100%)";
 const ease = [0.22, 1, 0.36, 1];
 
 const Modal = ({
@@ -82,7 +82,7 @@ const Modal = ({
 
                   {/* Close button */}
                   <Dialog.Close
-                    className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-white ring-1 ring-white/30 transition-all duration-300 hover:rotate-90 hover:bg-white hover:text-[#EF1A07] focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                    className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-white ring-1 ring-white/30 transition-all duration-300 hover:rotate-90 hover:bg-white hover:text-[#B0197E] focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
                     aria-label="Close"
                   >
                     <X size={18} strokeWidth={2.25} />

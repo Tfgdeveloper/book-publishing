@@ -16,7 +16,7 @@ import Heading from "../ui/Heading";
   Every text, link, image and number can be passed as a prop (see each variant's defaults).
 */
 
-const GRADIENT = "linear-gradient(100deg, #E2770B 0%, #EF1A07 40%, #EF1A07 100%)";
+const GRADIENT = "linear-gradient(100deg, #B0197E 0%, #310D89 100%)";
 const SKEW = 8; // how far the support card's left edge slants in toward the bottom (degrees)
 const ease = [0.22, 1, 0.36, 1];
 
@@ -85,7 +85,7 @@ function SupportVariant({
           {/* Left: Follow us */}
           <div className="flex flex-col justify-center gap-5 px-8 py-8 lg:w-[34%] lg:py-10 lg:pr-20">
             <div className="flex items-center gap-3">
-              <BookUser className="h-6 w-6 text-[#EF1A07]" strokeWidth={2} />
+              <BookUser className="h-6 w-6 text-[#B0197E]" strokeWidth={2} />
               <span className="font-heading text-lg font-semibold text-[#151515]">Follow Us</span>
             </div>
 
@@ -95,7 +95,7 @@ function SupportVariant({
                   <a
                     href={s.href}
                     aria-label={s.name}
-                    className="group flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#EF1A07] shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#EF1A07] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#EF1A07] focus-visible:ring-offset-2"
+                    className="group flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#B0197E] shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[linear-gradient(90deg,#B0197E_0%,#310D89_100%)] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B0197E] focus-visible:ring-offset-2"
                   >
                     <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
                       <path d={s.path} />
@@ -146,10 +146,10 @@ function SupportVariant({
             <a
               href={arrowHref}
               aria-label="Contact us"
-              className="group absolute left-4 top-1/2 hidden h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-[0_10px_25px_rgba(239,26,7,0.3),0_4px_12px_rgba(226,119,11,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white lg:flex"
+              className="group absolute left-4 top-1/2 hidden h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-[0_10px_25px_rgba(176,25,126,0.3),0_4px_12px_rgba(49,13,137,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white lg:flex"
             >
               <ArrowUpRight
-                className="h-6 w-6 text-[#EF1A07] transition-transform duration-300 group-hover:rotate-45"
+                className="h-6 w-6 text-[#B0197E] transition-transform duration-300 group-hover:rotate-45"
                 strokeWidth={2}
               />
             </a>
@@ -179,7 +179,7 @@ function PublishVariant({
           className="pointer-events-none absolute inset-0 overflow-hidden w-full h-full"
           
         />
-        <div className="pointer-events-none absolute inset-0 overflow-hidden w-full h-full bg-[linear-gradient(90deg,#E2770B_0%,#EF1A07_35%,#EF1A07_100%)] opacity-80"></div>
+        <div className="pointer-events-none absolute inset-0 overflow-hidden w-full h-full bg-[linear-gradient(90deg,#B0197E_0%,#310D89_100%)] opacity-80"></div>
 
         <Container className="relative grid items-center gap-10 py-8 lg:grid-cols-[2fr_1fr] lg:py-13">
           <motion.div {...fadeUp} className="text-white">

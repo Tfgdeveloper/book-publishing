@@ -44,7 +44,7 @@ const Navbar = ({
 
   const linkClass = (isActive) =>
     `font-body font-medium transition-colors duration-200 focus:outline-none focus-visible:underline ${
-      isActive ? " font-semibold text-[#fff] hover:text-[#EF1A07]" : "text-white hover:text-[#EF1A07]"
+      isActive ? " font-semibold text-[#fff] hover:text-[#B0197E]" : "text-white hover:text-[#B0197E]"
     }`;
 
   return (

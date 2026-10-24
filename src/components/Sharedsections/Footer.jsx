@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import PrimaryButton from "../ui/PrimaryButton";
 import Heading from "../ui/Heading";
 
-const GRADIENT = "linear-gradient(135deg, #E2770B 0%, #EF1A07 35%, #EF1A07 100%)";
+const GRADIENT = "linear-gradient(135deg, #B0197E 0%, #310D89 100%)";
 const GLOW = "0 10px 25px rgba(239,26,7,0.3), 0 4px 12px rgba(226,119,11,0.25)";
 
 const ease = [0.22, 1, 0.36, 1];
@@ -104,7 +104,7 @@ export default function Footer() {
         <motion.div variants={fadeUp}>
           <Link
             to="/"
-            className="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#EF1A07] font-heading text-[30px]"
+            className="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B0197E] font-heading text-[30px]"
           >
             LOGO HERE
           </Link>
@@ -148,7 +148,7 @@ export default function Footer() {
             <ul className="space-y-4">
               {contactInfo.map(({ icon: Icon, label, href }) => (
                 <li key={label} className="flex items-start gap-3">
-                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-gradient-to-br from-[#E2770B] to-[#EF1A07]">
+                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-gradient-to-br from-[#B0197E] to-[#310D89]">
                     <Icon className="h-4 w-4 text-white" />
                   </span>
                   {href ? (

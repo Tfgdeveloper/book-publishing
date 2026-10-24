@@ -133,7 +133,7 @@ function BookWriting({ data, phone = DEFAULT_PHONE, id = "about" }) {
                   {/* small red play-style bullet */}
                   <span
                     aria-hidden="true"
-                    className="h-0 w-0 shrink-0 border-y-[5px] border-l-[7px] border-y-transparent border-l-[#EF1A07]"
+                    className="h-0 w-0 shrink-0 border-y-[5px] border-l-[7px] border-y-transparent border-l-[#B0197E]"
                   />
                   {point}
                 </motion.li>

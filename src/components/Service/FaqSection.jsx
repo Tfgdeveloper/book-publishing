@@ -38,7 +38,7 @@ const FAQS = [
 /*  Shared look                                                        */
 /* ------------------------------------------------------------------ */
 const ease = [0.22, 1, 0.36, 1];
-const GRADIENT_BG = "bg-[linear-gradient(135deg,#E2770B_0%,#EF1A07_35%,#EF1A07_100%)]";
+const GRADIENT_BG = "bg-[linear-gradient(135deg,#B0197E_0%,#310D89_100%)]";
 
 /* ------------------------------------------------------------------ */
 /*  Single FAQ item                                                    */
@@ -57,7 +57,7 @@ function FaqItem({ item, index, open, onToggle, delay }) {
       transition={{ duration: 0.6, ease, delay }}
       className={`rounded-xl bg-white transition-shadow duration-300 ${
         open
-          ? "shadow-[0_14px_30px_rgba(239,26,7,0.12)] ring-1 ring-[#EF1A07]/15"
+          ? "shadow-[0_14px_30px_rgba(239,26,7,0.12)] ring-1 ring-[#B0197E]/15"
           : "shadow-[0_8px_22px_rgba(0,0,0,0.07)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.1)]"
       }`}
     >
@@ -68,11 +68,11 @@ function FaqItem({ item, index, open, onToggle, delay }) {
           aria-expanded={open}
           aria-controls={panelId}
           onClick={() => onToggle(index)}
-          className="flex w-full items-center justify-between gap-4 rounded-xl px-6 py-5 text-left outline-none focus-visible:ring-2 focus-visible:ring-[#EF1A07]"
+          className="flex w-full items-center justify-between gap-4 rounded-xl px-6 py-5 text-left outline-none focus-visible:ring-2 focus-visible:ring-[#B0197E]"
         >
           <span
             className={`font-heading text-[18px] font-medium transition-colors duration-300 ${
-              open ? "text-[#EF1A07]" : "text-[#1a1a1a]"
+              open ? "text-[#B0197E]" : "text-[#1a1a1a]"
             }`}
           >
             {item.q}

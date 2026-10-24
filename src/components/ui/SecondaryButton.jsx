@@ -17,10 +17,10 @@ const SecondaryButton = ({
 
   const iconVariants = {
     default:
-      "bg-[linear-gradient(90deg,#E2770B_0%,#EF1A07_35%,#EF1A07_100%)] ",
+      "bg-[linear-gradient(90deg,#B0197E_0%,#310D89_100%)] ",
     glassIcon: "glass ",
     gradientIcon:
-      "bg-[linear-gradient(90deg,#E2770B_0%,#EF1A07_35%,#EF1A07_100%)]",
+      "bg-[linear-gradient(90deg,#B0197E_0%,#310D89_100%)]",
   };
 
   return (

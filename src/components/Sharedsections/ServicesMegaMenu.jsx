@@ -47,7 +47,7 @@ import { Link, useLocation } from "react-router";
 /*  Shared look                                                        */
 /* ------------------------------------------------------------------ */
 const ease = [0.22, 1, 0.36, 1];
-const GRADIENT_BG = "bg-[linear-gradient(135deg,#E2770B_0%,#EF1A07_35%,#EF1A07_100%)]";
+const GRADIENT_BG = "bg-[linear-gradient(135deg,#B0197E_0%,#310D89_100%)]";
 
 const layeredShadow = [
   "0 2.2px 1.76px 0 rgba(0, 0, 0, 0.02)",
@@ -152,7 +152,7 @@ function FeaturedCard({ link, onNavigate }) {
     <Link
       to={link.href}
       onClick={onNavigate}
-      className="group relative isolate flex h-full flex-col overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#FFF7F2_0%,#FFE9DD_55%,#FFDCCB_100%)] p-6 outline-none transition-shadow duration-500 hover:shadow-[0_14px_30px_rgba(239,26,7,0.12)] focus-visible:ring-2 focus-visible:ring-[#EF1A07] focus-visible:ring-offset-2"
+      className="group relative isolate flex h-full flex-col overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#FFF7F2_0%,#FFE9DD_55%,#FFDCCB_100%)] p-6 outline-none transition-shadow duration-500 hover:shadow-[0_14px_30px_rgba(239,26,7,0.12)] focus-visible:ring-2 focus-visible:ring-[#B0197E] focus-visible:ring-offset-2"
     >
       {/* soft light circle behind the image */}
       <span
@@ -170,8 +170,8 @@ function FeaturedCard({ link, onNavigate }) {
         {link.desc}
       </span>
 
-      <span className="relative z-10 mt-auto inline-flex items-center gap-2.5 font-body text-[13px] font-semibold text-[#EF1A07]">
-        <span className="flex size-8 items-center justify-center rounded-full border border-[#EF1A07]/40 transition-all duration-300 group-hover:border-[#EF1A07] group-hover:bg-[#EF1A07] group-hover:text-white">
+      <span className="relative z-10 mt-auto inline-flex items-center gap-2.5 font-body text-[13px] font-semibold text-[#B0197E]">
+        <span className="flex size-8 items-center justify-center rounded-full border border-[#B0197E]/40 transition-all duration-300 group-hover:border-[#B0197E] group-hover:bg-[#B0197E] group-hover:text-white">
           <ArrowRight size={15} aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-0.5" />
         </span>
         Learn More
@@ -202,7 +202,7 @@ function ServiceCard({ link, index, wide, onNavigate }) {
     <Link
       to={link.href}
       onClick={onNavigate}
-      className={`group flex min-h-0 flex-col rounded-2xl border border-black/[0.06] bg-white p-4 outline-none transition-all duration-300 hover:-translate-y-0.5 hover:border-[#EF1A07]/20 hover:shadow-[0_12px_28px_rgba(239,26,7,0.10)] focus-visible:ring-2 focus-visible:ring-[#EF1A07] ${
+      className={`group flex min-h-0 flex-col rounded-2xl border border-black/[0.06] bg-white p-4 outline-none transition-all duration-300 hover:-translate-y-0.5 hover:border-[#B0197E]/20 hover:shadow-[0_12px_28px_rgba(239,26,7,0.10)] focus-visible:ring-2 focus-visible:ring-[#B0197E] ${
         wide ? "col-span-2" : ""
       }`}
     >
@@ -219,7 +219,7 @@ function ServiceCard({ link, index, wide, onNavigate }) {
         <ArrowRight
           size={15}
           aria-hidden="true"
-          className="shrink-0 text-[#EF1A07] transition-transform duration-300 group-hover:translate-x-1"
+          className="shrink-0 text-[#B0197E] transition-transform duration-300 group-hover:translate-x-1"
         />
       </span>
 
@@ -349,8 +349,8 @@ export default function ServicesMegaMenu({
           isActive
             ? "italic font-semibold text-[#fff]"
             : open
-            ? "text-[#EF1A07]"
-            : "text-white hover:text-[#EF1A07]"
+            ? "text-[#B0197E]"
+            : "text-white hover:text-[#B0197E]"
         } ${triggerClassName}`}
       >
         {label}
@@ -411,8 +411,8 @@ export default function ServicesMegaMenu({
                     onMouseEnter={() => setActiveId(cat.id)}
                     onClick={() => setActiveId(cat.id)}
                     onKeyDown={(e) => onTabKeyDown(e, i)}
-                    className={`relative flex items-center gap-2 rounded-xl px-4 py-2.5 font-body text-[13px] font-medium outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[#EF1A07] ${
-                      selected ? "text-[#EF1A07]" : "text-neutral-600 hover:text-[#1a1a1a]"
+                    className={`relative flex items-center gap-2 rounded-xl px-4 py-2.5 font-body text-[13px] font-medium outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[#B0197E] ${
+                      selected ? "text-[#B0197E]" : "text-neutral-600 hover:text-[#1a1a1a]"
                     }`}
                   >
                     {selected && (

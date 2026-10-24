@@ -5,7 +5,7 @@ import PrimaryButton from "../ui/PrimaryButton";
 import SecondaryButton from "../ui/SecondaryButton";
 import Heading from "../ui/Heading";
 
-const GRADIENT = "linear-gradient(135deg, #E2770B 0%, #EF1A07 35%, #EF1A07 100%)";
+const GRADIENT = "linear-gradient(135deg, #B0197E 0%, #310D89 100%)";
 const PHONE = "(000) 123 4567";
 
 const SERVICES = [
@@ -86,7 +86,7 @@ function BookWriting({
                 {/* small red play-style bullet */}
                 <span
                   aria-hidden="true"
-                  className="h-0 w-0 shrink-0 border-y-[5px] border-l-[7px] border-y-transparent border-l-[#EF1A07]"
+                  className="h-0 w-0 shrink-0 border-y-[5px] border-l-[7px] border-y-transparent border-l-[#B0197E]"
                 />
                 {s}
               </motion.li>
