@@ -5,6 +5,9 @@ import ContactSection from '../components/Sharedsections/ContactSection'
 const Contact = () => {
   return (
     <div>
+      <title>Contact Author House Inc | Free Book Publishing Quote</title>
+      <meta name="description" content="Contact Author House Inc in Clearwater, FL for a free book publishing quote. Call (727) 618-7790 or send a message about your manuscript today."></meta>
+      <meta name="keywords" content="contact Author House Inc, book publishing quote, publishing agency Clearwater FL, talk to a publishing expert"></meta>
       <Hero
         variant="legal"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact Us" }]}

@@ -19,7 +19,7 @@ function Layout() {
   return (
     <div className="flex min-h-screen flex-col bg-white text-neutral-900">
       <ScrollToTop />
-      <Navbar logo="Logo Here" logoclass="w-60 tect-white" links={navLinks} />
+      <Navbar logo="/image/logo.png" logoclass="" links={navLinks} />
       <main className="flex-1">
         <Outlet />
       </main>

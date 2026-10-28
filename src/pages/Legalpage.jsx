@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import Hero from "../components/Sharedsections/Hero";
 import Container from "../components/ui/Container";
-import { legalPages, CONTACT, EFFECTIVE_DATE } from "../data/Legalpages";
+import { legalPages, CONTACT, } from "../data/Legalpages";
 
 /* ==================================================================
    One component for all legal pages. Add the routes like this:
@@ -195,9 +195,7 @@ export default function LegalPage({ slug }) {
             transition={{ duration: 0.8, ease }}
             className="max-w-3xl"
           >
-            <p className="text-sm text-[#555]">
-              <span className="font-semibold text-[#000]">Effective date:</span> {EFFECTIVE_DATE}
-            </p>
+            
 
             {intro.map((p, i) => (
               <p key={i} className="mt-4 text-sm leading-7 text-[#555] md:text-base">

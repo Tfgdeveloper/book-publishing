@@ -408,7 +408,7 @@ export default function ServicesMegaMenu({
                     aria-selected={selected}
                     aria-controls={`${uid}-tabpanel`}
                     tabIndex={selected ? 0 : -1}
-                    onMouseEnter={() => setActiveId(cat.id)}
+
                     onClick={() => setActiveId(cat.id)}
                     onKeyDown={(e) => onTabKeyDown(e, i)}
                     className={`relative flex items-center gap-2 rounded-xl px-4 py-2.5 font-body text-[13px] font-medium outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[#B0197E] ${

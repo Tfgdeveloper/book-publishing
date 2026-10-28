@@ -13,7 +13,7 @@
      an attorney review these policies.
    ================================================================== */
 
-export const EFFECTIVE_DATE = "[Month Day, Year]";
+
 
 export const CONTACT = {
   company: "Author House Inc.",
@@ -29,8 +29,8 @@ export const legalPages = {
   "privacy-policy": {
     name: "Privacy Policy",
     seo: {
-      title: "Privacy Policy",
-      description: "How Author House Inc. collects, uses and protects your personal information and manuscripts.",
+      title: "Privacy Policy ",
+      description: "Learn how Author House Inc collects, uses and protects your personal information and the manuscripts and creative work you share with us.",
     },
     hero: {
       badge: "Legal",
@@ -199,8 +199,8 @@ export const legalPages = {
   "terms-and-conditions": {
     name: "Terms and Conditions",
     seo: {
-      title: "Terms and Conditions",
-      description: "The terms that govern your use of the Author House Inc. website and services.",
+      title: "Terms and Conditions ",
+      description: "Read the Terms and Conditions for Author House Inc, covering our writing, publishing and marketing services, payments, ownership and revisions.",
     },
     hero: {
       badge: "Legal",
@@ -427,8 +427,8 @@ export const legalPages = {
   "refund-policy": {
     name: "Refund Policy",
     seo: {
-      title: "Refund Policy",
-      description: "How refunds and cancellations work for Author House Inc. writing, publishing and marketing services.",
+      title: "Refund Policy ",
+      description: "Review the Author House Inc refund and cancellation policy, including refunds by project stage, non-refundable items and how to request a refund.",
     },
     hero: {
       badge: "Legal",

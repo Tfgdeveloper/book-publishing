@@ -106,7 +106,7 @@ export default function Footer() {
             to="/"
             className="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B0197E] font-heading text-[30px]"
           >
-            LOGO HERE
+            <img src="/image/logo.png" className="w-[200px]"/>
           </Link>
           <p className="mt-5 max-w-xs text-sm leading-relaxed font-light text-[#fff]/60">
             Author House Inc is a premier book publishing agency dedicated to empowering authors worldwide. From professional editing and custom cover design to global distribution and targeted marketing, we provide end-to-end solutions to bring your story to life. 

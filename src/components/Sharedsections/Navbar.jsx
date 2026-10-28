@@ -55,15 +55,15 @@ const Navbar = ({
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease }}
-        className="relative z-40 w-full bg-transparent -mb-[100px] z-50 mx-auto max-w-[1600px] "
+        className="relative z-40 w-full bg-transparent -mb-[100px] md:-mb-[100px] z-50 mx-auto max-w-[1600px] "
       >
-        <nav className="w-[85%] mx-auto glass rounded-full flex h-16 items-center justify-between px-5 sm:h-20 sm:px-6 lg:px-16 mt-3">
+        <nav className="w-[95%] md:w-[85%] mx-auto glass rounded-full flex h-20 items-center justify-between  px-5 sm:h-20 sm:px-6 lg:px-16 mt-3">
           <Link
             to={logoHref}
             onClick={closeMenu}
             className="font-heading regular text-xl font-bold text-white sm:text-2xl "
           >
-           {logo}
+           <img src={logo} className="w-[180px]"/>
           </Link>
 
           {/* Desktop (lg and up — 6+ links get cramped on tablets) */}
@@ -108,7 +108,7 @@ const Navbar = ({
             aria-label="Open menu"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
-            className="flex h-10 w-10 items-center justify-center rounded-full text-black transition-colors hover:bg-black/5 lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-white transition-colors hover:bg-black/5 lg:hidden"
           >
             <Menu size={25} strokeWidth={1.8} />
           </button>
@@ -121,7 +121,7 @@ const Navbar = ({
           <div className="fixed inset-0 z-50 lg:hidden">
             <motion.div
               onClick={closeMenu}
-              className="absolute inset-0 bg-black/30"
+              className="absolute inset-0 bg-white/30"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -133,7 +133,7 @@ const Navbar = ({
               role="dialog"
               aria-modal="true"
               aria-label="Menu"
-              className="absolute right-0 top-0 flex h-full w-full max-w-sm flex-col overflow-y-auto bg-white px-6 pb-8 shadow-2xl"
+              className="absolute right-0 top-0 flex h-full w-full max-w-sm flex-col overflow-y-auto bg-black px-6 pb-8 shadow-2xl"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -146,21 +146,21 @@ const Navbar = ({
                   onClick={closeMenu}
                   className="font-heading text-xl font-bold text-black sm:text-2xl"
                 >
-                  <img src={logo} className={logoclass}/>
+                  <img src={logo} className="w-[250px] mt-10"/>
                 </Link>
                 <button
                   type="button"
                   onClick={closeMenu}
                   aria-label="Close menu"
                   autoFocus
-                  className="flex h-10 w-10 items-center justify-center rounded-full text-black transition-colors hover:bg-black/5"
+                  className="flex h-10 w-10 items-center justify-center rounded-full text-white transition-colors hover:bg-black/5"
                 >
                   <X size={25} strokeWidth={1.8} />
                 </button>
               </div>
 
               <motion.div
-                className="mt-6 flex flex-col"
+                className="mt-6 flex flex-col "
                 initial="hidden"
                 animate="visible"
                 variants={{ visible: { transition: { staggerChildren: 0.05, delayChildren: 0.15 } } }}

@@ -133,7 +133,7 @@ function ServiceCard({ service, active, onActivate }) {
         </h3>
 
         <p
-          className={`mt-4 text-[16px] font-thin leading-6 transition-colors duration-300 ${
+          className={`mt-4 text-[16px] font-normal leading-6 transition-colors duration-300 ${
             active ? "text-white" : "text-[#555555]"
           }`}
         >

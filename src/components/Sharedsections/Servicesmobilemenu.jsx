@@ -39,7 +39,7 @@ export default function ServicesMobileMenu({
         aria-controls={`${uid}-services`}
         onClick={() => setOpen((v) => !v)}
         className={`flex w-full items-center justify-between py-5 text-left font-body text-lg font-medium transition-colors focus:outline-none focus-visible:underline ${
-          isActive ? "italic font-semibold text-[#00415A]" : "text-black hover:text-[#00415A]"
+          isActive ? " font-semibold text-[#fff] hover:text-[#B0197E]" : "text-white hover:text-[#B0197E]"
         }`}
       >
         {label}
@@ -61,11 +61,11 @@ export default function ServicesMobileMenu({
                       aria-controls={`${uid}-${cat.id}`}
                       onClick={() => setOpenCat(expanded ? null : cat.id)}
                       className={`flex w-full items-center gap-3 rounded-2xl px-3 py-3 text-left font-body text-base font-medium transition-colors ${
-                        expanded ? "bg-white text-[#00415A]" : "text-[#1a1a1a] hover:bg-white/60"
+                        expanded ? "text-[#fff]" : "text-[#fff] hover:text-[#B0197E]"
                       }`}
                     >
                       {Icon && (
-                        <span className="grid size-9 shrink-0 place-items-center rounded-full bg-white text-[#C46F00]">
+                        <span className="grid size-9 shrink-0 place-items-center rounded-full bg-[#B0197E] text-[#fff]">
                           <Icon size={18} aria-hidden="true" />
                         </span>
                       )}
@@ -83,8 +83,8 @@ export default function ServicesMobileMenu({
                                 onClick={onNavigate}
                                 className={`ml-[3.75rem] block border-l-2 py-2.5 pl-4 font-body text-[15px] transition-colors ${
                                   pathname === link.href
-                                    ? "border-[#F29013] font-semibold text-[#00415A]"
-                                    : "border-black/10 text-neutral-700 hover:border-[#F29013] hover:text-[#00415A]"
+                                    ? "border-[#F29013] font-semibold text-[#fff]"
+                                    : "border-black/10 text-white hover:border-[#B0197E] hover:text-[#B0197E]"
                                 }`}
                               >
                                 {link.title}
@@ -101,7 +101,7 @@ export default function ServicesMobileMenu({
               <Link
                 to={allServicesHref}
                 onClick={onNavigate}
-                className="mt-2 inline-flex items-center gap-1 px-3 py-2 font-body text-sm font-semibold text-[#00415A] underline-offset-4 hover:underline"
+                className="mt-2 inline-flex items-center gap-1 px-3 py-2 font-body text-sm font-semibold text-[#B0197E] underline-offset-4 hover:underline"
               >
                 View all services
                 <ArrowUpRight size={16} aria-hidden="true" />

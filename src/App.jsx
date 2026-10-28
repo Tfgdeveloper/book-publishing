@@ -10,6 +10,7 @@ import Service from "./pages/Service";
 import ReviewsPage from "./pages/Reviews";
 import ServiceDetail from "./pages/ServiceDetail";
 import LegalPage from "./pages/Legalpage";
+import Thankyou from "./pages/Thankyou";
 
 
 
@@ -29,6 +30,7 @@ function App() {
             <Route path="/privacy-policy" element={<LegalPage slug="privacy-policy" />} />
             <Route path="/terms-and-conditions" element={<LegalPage slug="terms-and-conditions" />} />
             <Route path="/refund-policy" element={<LegalPage slug="refund-policy" />} />
+            <Route path="/thank-you" element={<Thankyou/>} />
             
             <Route path="*" element={<NotFound />} />
           </Route>

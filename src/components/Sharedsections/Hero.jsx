@@ -127,7 +127,7 @@ function Breadcrumbs({ items = [], className = "" }) {
 function HomeHero() {
   return (
     <div className="relative overflow-clip rounded-b-[30px] bg-black">
-      <section id="home" className="relative z-10 flex items-center pt-20 sm:pt-24 lg:pt-40">
+      <section id="home" className="relative z-10 flex items-center pt-30 pb-20 md:pb-0 sm:pt-24 lg:pt-40 ">
         <Rays />
 
         <div className="relative z-10 mx-auto grid w-full max-w-[1600px] items-center px-5 sm:px-6 lg:px-16">
@@ -144,7 +144,7 @@ function HomeHero() {
               className="regular mt-5 text-[32px] leading-[1.1] text-white md:text-[48px]">
             </Heading>
 
-            <motion.p variants={fadeUp} className="mx-auto mt-4 max-w-4xl text-center text-[16px] font-thin text-white">
+            <motion.p variants={fadeUp} className="mx-auto mt-4 max-w-4xl text-center text-[16px] text-white">
               Bring your manuscript to life with industry-leading publishing solutions. At Author House Inc, we empower writers by turning ideas into professionally edited, beautifully designed, and globally distributed books. From initial draft refinement to full-scale promotion, we handle every detail so your story makes a lasting impact. 
             </motion.p>
 
@@ -159,8 +159,8 @@ function HomeHero() {
             <Rating className="mt-8 justify-center" />
           </motion.div>
 
-          <div className="relative z-0">
-            <img src="image/hero.png" alt="A collection of published books" className="-mt-25 h-auto w-full" />
+          <div className="hidden md:flex relative z-0">
+            <img src="/image/hero.png" alt="A collection of published books" className="-mt-25 h-auto w-full" />
           </div>
         </div>
       </section>
@@ -192,8 +192,8 @@ function PageHero({
   description,
   breadcrumbs = [],
   phone = PHONE,
-  formTitle = "Get a Free Consultation",
-  formDescription = "Share a few details and we'll get back to you within 24 hours.",
+  formTitle = "Schedule a Complimentary Strategy Session",
+  formDescription = "Share your literary goals and let’s map out your complete journey.",
 }) {
   return (
     <div className="relative overflow-clip rounded-b-[30px] bg-black">
@@ -253,7 +253,7 @@ function PageHero({
            
 
             <div className="flex items-start justify-between gap-4">
-              <div>
+              <div className="w-full">
                 <h2 className="font-heading text-3xl leading-tight text-[#fff]">{formTitle}</h2>
                 <p className="mt-1.5 text-sm text-white mb-6">{formDescription}</p>
                 <HeroForm
@@ -309,7 +309,7 @@ function LegalHero({ badge, title, description, breadcrumbs = [], lastUpdated })
         )}
         <motion.div variants={fadeUp} className="mt-9 flex flex-wrap items-center gap-4">
             <PrimaryButton openModal className="px-[32px] py-[16px]">
-              Start Your Story
+              Start Your Story 
               <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
             </PrimaryButton>
           

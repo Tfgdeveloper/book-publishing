@@ -9,20 +9,15 @@ const GRADIENT = "linear-gradient(135deg, #B0197E 0%, #310D89 100%)";
 const PHONE = "(000) 123 4567";
 
 const SERVICES = [
-  "Author website",
-  "Ebook writing",
-  "Book publishing",
-  "Proofreading services",
-  "Book Publishing",
-  "Book Editing",
-  "Publish your book",
-  "Book Formatting",
-  "Self-Publish your book",
-  "Video Trailer",
-  "Self-publishing agency",
-  "Audio Book",
-  "Publish your own book",
-  "Book cover designing",
+  "Author Website Development",
+  "Professional Book Publishing",
+  "End-to-End Ghostwriting ",
+  "Meticulous Copy Editing ",
+  "Custom Book Cover Design ",
+  "Cinematic Video Trailers  ",
+  "Audiobook Production",
+  "Interior Formatting",
+  "Proofreading",
 ];
 
 const ease = [0.22, 1, 0.36, 1];
@@ -69,15 +64,13 @@ function BookWriting({
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.h2 variants={item} className="font-heading text-3xl leading-tight text-[#000] md:text-4xl lg:text-5xl">
-            <span className="medium">Book Writing,</span>
-            <span className="regular"> Where your Story comes to Life</span>
+            <span className="medium">Book Writing, </span>
+            <span className="regular"> Where Your Story Comes to Life</span>
             
           </motion.h2>
 
           <motion.p variants={item} className="mt-5 text-sm leading-7 text-[#555] md:text-base">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-            galley of type and scrambled it to make a type specimen book.
+            Every author has a powerful message, creative world, or unique perspective waiting to be shared. At Author House Inc, we collaborate closely with you at every stage of the writing and publishing process. From shaping raw ideas into refined chapters to designing print-ready layouts, our experts turn your manuscript into a compelling book that captivates readers. 
           </motion.p>
 
           <motion.ul variants={container} className="mt-7 grid gap-x-8 gap-y-3 sm:grid-cols-2">
@@ -94,7 +87,7 @@ function BookWriting({
           </motion.ul>
 
           <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-7">
-            <PrimaryButton openModal className="px-[32px] py-[16px]">Start Your Story</PrimaryButton>
+            <PrimaryButton openModal className="px-[32px] py-[16px]">Get A Quote</PrimaryButton>
               <SecondaryButton variant="gradientIcon" href="tel:+17276187790">(727) 618-7790</SecondaryButton>
           </motion.div>
         </motion.div>

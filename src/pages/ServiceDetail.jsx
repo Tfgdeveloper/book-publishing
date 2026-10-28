@@ -80,10 +80,10 @@ export default function ServiceDetail() {
           { label: "Services", href: "/services" },
           { label: page.name },
         ]}
-        formTitle={hero.formTitle ?? "Get a Free Consultation"}
+        formTitle={hero.formTitle ?? "Schedule a Complimentary Strategy Session "}
         formDescription={
           hero.formDescription ??
-          `Tell us about your book and we’ll plan your ${page.name.toLowerCase()} project.`
+          `Share your literary goals and let’s map out your complete  journey for ${page.name.toLowerCase()}.`
         }
       />
 

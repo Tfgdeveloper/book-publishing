@@ -1,27 +1,27 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, NotebookPen, PenTool, Rocket } from "lucide-react";
 import Container from "../ui/Container";
-import { Lightbulb } from "lucide-react";
+
 import Heading from "../ui/Heading";
 /* Replace icons with your own (transparent PNG or SVG) */
 const STEPS = [
   {
-    icon: Lightbulb,
-    title: "Heading Here",
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.",
-    href: "#",
+    icon: NotebookPen,
+    title: "Manuscript Consultation & Planning",
+    text: "We review your draft or book concept, pair you with a dedicated publishing project manager, and define a custom roadmap for editing, layout, and release.",
+    
   },
   {
-    icon: Lightbulb,
-    title: "Heading Here",
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.",
-    href: "#",
+    icon: PenTool,
+    title: "Production, Design & Formatting",
+    text: "Our expert editors polish your manuscript while our designers craft a captivating book cover and interior format ready for print and eBook platforms.",
+
   },
   {
-    icon: Lightbulb,
-    title: "Heading Here",
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.",
-    href: "#",
+    icon: Rocket,
+    title: "Global Publishing & Promotion",
+    text: "Your book is published across major platforms worldwide with custom marketing campaigns designed to reach your target readers and maximize sales. ",
+
   },
 ];
 
@@ -116,13 +116,12 @@ function ProcessSteps({ steps = STEPS }) {
           className="mx-auto max-w-2xl text-center"
         >
           <h2 className="font-heading text-3xl text-[#000] md:text-4xl lg:text-5xl">
-            <span className="regular">From Idea to </span>
-            <span className="medium">Published Book</span>
+            <span className="regular">From Idea to  </span>
+            <span className="medium">Published Book </span>
             <span className="regular"> Step by Step</span>
           </h2>
           <p className="mt-4 text-sm font-light leading-6 text-[#555] md:text-base">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-            been the industry's standard dummy text ever since the 1500s.
+           We simplify the journey from manuscript creation to global publishing. At Author House Inc, our streamlined 3-step process guides you through every milestone to make publishing seamless and rewarding. 
           </p>
         </motion.div>
 
